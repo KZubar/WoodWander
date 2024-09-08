@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="BlrCoordinateMO" representedClassName="BlrCoordinateMO" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="blr" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BlrMO" inverseName="coordinates" inverseEntity="BlrMO"/>
+    </entity>
+    <entity name="BlrMO" representedClassName="BlrMO" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="engType_1" optional="YES" attributeType="String"/>
+        <attribute name="engType_2" optional="YES" attributeType="String"/>
+        <attribute name="gid_0" optional="YES" attributeType="String"/>
+        <attribute name="gid_1" optional="YES" attributeType="String"/>
+        <attribute name="gid_2" optional="YES" attributeType="String"/>
+        <attribute name="hasc_1" optional="YES" attributeType="String"/>
+        <attribute name="hasc_2" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name_0" optional="YES" attributeType="String"/>
+        <attribute name="name_1" optional="YES" attributeType="String"/>
+        <attribute name="name_2" optional="YES" attributeType="String"/>
+        <attribute name="nl_name_1" optional="YES" attributeType="String"/>
+        <attribute name="nl_name_2" optional="YES" attributeType="String"/>
+        <attribute name="type_0" optional="YES" attributeType="String"/>
+        <attribute name="type_1" optional="YES" attributeType="String"/>
+        <attribute name="type_2" optional="YES" attributeType="String"/>
+        <attribute name="varname_1" optional="YES" attributeType="String"/>
+        <attribute name="varname_2" optional="YES" attributeType="String"/>
+        <relationship name="coordinates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BlrCoordinateMO" inverseName="blr" inverseEntity="BlrCoordinateMO"/>
+    </entity>
+</model>

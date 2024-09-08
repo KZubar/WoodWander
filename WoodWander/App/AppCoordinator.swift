@@ -6,11 +6,18 @@
 //
 
 import UIKit
+import Storage
+
+protocol AppCoordinatorDelegate: AnyObject {
+    func openTab(_ tab: Int)
+    func logout()
+}
 
 final class AppCoordinator: Coordinator {
- 
+
     private var container: Container
     private var windowsManager: WindowManager
+    private var tabBar: TabBarController?
 
     init(container: Container) {
         self.container = container
@@ -18,56 +25,12 @@ final class AppCoordinator: Coordinator {
     }
     
     func startApp() {
-
-        //FIXME: - временно, для отладки, потом закомментировать
         openMainApp()
-        
-        //FIXME: - временно, для отладки, потом разкомментировать
-//        if ParametersHelper.get(.authenticated) == false {
-//            openAuthModule()
-//        } else if ParametersHelper.get(.onboarded) == false {
-//            openOnboardingModule()
-//        } else {
-//            openMainApp()
-//        }
     }
-    
-    private func openAuthModule() {
-//        let coordinator = LoginCoordinator(container: container)
-//        
-//        self.children.append(coordinator)
-//
-//        coordinator.onDidFinish = { [weak self] coordinator in
-//            self?.children.removeAll { $0 == coordinator}
-//            self?.startApp()
-//        }
-//
-//        let vc = coordinator.start()
-//        
-//        let window = windowsManager.get(type: .main)
-//        window.rootViewController = vc
-//        windowsManager.show(type: .main)
-    }
-    
-    private func openOnboardingModule() {
-//        let coordinator = OnboardFirstStepCoordinator()
-//        
-//        self.children.append(coordinator)
-//
-//        coordinator.onDidFinish = { [weak self] coordinator in
-//            self?.children.removeAll { $0 == coordinator}
-//            self?.startApp()
-//        }
-//
-//        let vc = coordinator.start()
-//
-//        let window = windowsManager.get(type: .main)
-//        window.rootViewController = vc
-//        windowsManager.show(type: .main)
-    }
-    
+
     private func openMainApp() {
-        let coordinator = MainTabBarCoordinator(container: container)
+        let coordinator = MainTabBarCoordinator(container: container,
+                                                delegat: self)
         
         self.children.append(coordinator)
 
@@ -76,11 +39,25 @@ final class AppCoordinator: Coordinator {
             self?.startApp()
         }
 
-        let vc = coordinator.start()
+        self.tabBar = coordinator.start()
         
         let window = windowsManager.get(type: .main)
-        window.rootViewController = vc
+        window.rootViewController = tabBar
         windowsManager.show(type: .main)
+        
+        self.tabBar?.selectTab(index: 0)
+        
     }
 
+}
+
+
+extension AppCoordinator: AppCoordinatorDelegate {
+    func openTab(_ tab: Int) {
+        self.tabBar?.selectTab(index: tab)
+    }
+
+    func logout() {
+        self.startApp()
+    }
 }

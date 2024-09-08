@@ -7,15 +7,7 @@
 
 import UIKit
 
-protocol MainTabBarCoordinatorProtocol: AnyObject {
-    //FIXME: - правильный вариант - вариант с делегатом
-    //func showMenu(sender: UIView, delegat: MenuPopOverDelegate)
-    func showMenu(sender: UIView)
-    
-    func openNewCalendarNotification()
-    func openNewTimerNotification()
-    func openNewLocationNotification()
-}
+protocol MainTabBarCoordinatorProtocol: AnyObject { }
 
 final class MainTabBarVM: MainTabBarViewModelProtocol {
     
@@ -25,22 +17,4 @@ final class MainTabBarVM: MainTabBarViewModelProtocol {
         self.coordinator = coordinator
     }
         
-    func addButtonDidTap(sender: UIView) {
-        //FIXME: - правильный вариант - вариант с делегатом
-        //coordinator?.showMenu(sender: sender, delegat: self)
-        coordinator?.showMenu(sender: sender)
-    }
-}
-
-extension MainTabBarVM: MenuPopOverDelegate {
-    
-    func didSelect(action: MenuPopOverVC.Action) {
-        switch action {
-        case .calendar: coordinator?.openNewCalendarNotification()
-        case .location: coordinator?.openNewLocationNotification()
-        case .timer: coordinator?.openNewTimerNotification()
-        default: break
-        }
-    }
-    
 }

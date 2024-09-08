@@ -7,18 +7,6 @@
 
 import UIKit
 
-fileprivate enum L10n {
-    static let headerText_account: String = "global_account".localizaed
-    static let headerText_settings: String = "global_settings".localizaed
-    
-    static let title_mapAllPoints: String = "global_mapAllPoints".localizaed
-    static let title_completedNotification: String = "global_completedNotification".localizaed
-    static let title_notifications: String = "global_notifications".localizaed
-    static let title_export: String = "global_export".localizaed
-    static let title_logout: String = "global_logout".localizaed
-}
-
-
 enum ProfileSections {
     
     case account(String)
@@ -33,8 +21,8 @@ enum ProfileSections {
     
     var headerText: String {
         switch self {
-        case .account: return L10n.headerText_account
-        case .settings: return L10n.headerText_settings
+        case .account: return "Учетная запись"
+        case .settings: return "Настройки"
         }
     }
 }
@@ -43,6 +31,7 @@ enum ProfileSections {
 enum ProfileSettingsRows: CaseIterable {
     
     case mapAllPoints
+    case blrLoad
     case completedNotification
     case notifications
     case export
@@ -52,33 +41,31 @@ enum ProfileSettingsRows: CaseIterable {
         switch self {
             //FIXME: -
         case .mapAllPoints: return .Temp.addAction
+        case .blrLoad: return .Temp.addAction
         case .completedNotification: return .Temp.addAction
         case .notifications: return .Temp.addAction
         case .export: return .Temp.addAction
         case .logout: return .Temp.addAction
-//        case .mapAllPoints: return .MenuMapAction.iconMenuHybrid
-//        case .completedNotification: return .General.completedNotification
-//        case .notifications: return .General.notifications
-//        case .export: return .General.export
-//        case .logout: return .General.logout
         }
     }
     
     var title: String {
         switch self {
-        case .mapAllPoints: return L10n.title_mapAllPoints
-        case .completedNotification: return L10n.title_completedNotification
-        case .notifications: return L10n.title_notifications
-        case .export: return L10n.title_export
-        case .logout: return L10n.title_logout
+        case .mapAllPoints: return "Активные локации на карте"
+        case .blrLoad: return "Обновить границы областей и регионов"
+        case .completedNotification: return "Завершенные уведомления"
+        case .notifications: return "Оповещения"
+        case .export: return "Экспорт"
+        case .logout: return "Выйти"
         }
     }
     
     var infoText: String? {
         switch self {
-        case .mapAllPoints: return "Map"
-        case .completedNotification: return "Open"
-        case .export: return "Now"
+        case .mapAllPoints: return "Карта"
+        case .blrLoad: return "Загрузить"
+        case .completedNotification: return "Открыть"
+        case .export: return "Выполнить"
         default: return nil
         }
     }

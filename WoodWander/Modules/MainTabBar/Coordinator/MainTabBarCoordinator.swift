@@ -6,121 +6,82 @@
 //
 
 import UIKit
+import SwiftIcons
 
 final class MainTabBarCoordinator: Coordinator {
     
     private var rootVC: UIViewController?
     private let container: Container
     
-    init(container: Container) {
+    private weak var delegat: (any AppCoordinatorDelegate)?
+    
+    init(container: Container, delegat: AppCoordinatorDelegate) {
         self.container = container
+        self.delegat = delegat
     }
     
-    override func start() -> UIViewController {
-        let tabBar = MainTabBarAssembler.make(coordinator: self)
-        tabBar.viewControllers = [makeHomeModule(), makeProfileModule()]
+    override func start() -> TabBarController {
+        let tabBar = TabBarController(modules: setupControllers())
         self.rootVC = tabBar
         return tabBar
     }
-    
-    private func makeHomeModule() -> UIViewController {
-        return .init()
-        
-        //FIXME: -
 
-//        let coordinator = HomeCoordinator(container: container,
-//                                          isCompletedNotification: false)
-//        children.append(coordinator)
-//        let vc = coordinator.start()
-//        return vc
+    private func makeMapPlanPointsModule() -> UIViewController {
+        let coordinator = MapPlanPointsCoordinator(container: container)
+        children.append(coordinator)
+        let vc = coordinator.start()
+        return vc
     }
-    
+ 
+    private func makeCategoriesPointModule() -> UIViewController {
+        let coordinator = CategoriesPointCoordinator(container: container)
+        children.append(coordinator)
+        let vc = coordinator.start()
+        return vc
+    }
+
     private func makeProfileModule() -> UIViewController {
         let coordinator = ProfileCoordinator(container: container)
         children.append(coordinator)
         let vc = coordinator.start()
-        //FIXME: - зачем тут это?
-        coordinator.onDidFinish = { [weak self] coordinator in
-            self?.children.removeAll()
-            self?.rootVC?.dismiss(animated: true)
-            self?.finish()
-        }
         return vc
     }
+    
+
 }
 
-extension MainTabBarCoordinator: MainTabBarCoordinatorProtocol {
-    
-    func showMenu(sender: UIView, delegat: MenuPopOverDelegate) {
+extension MainTabBarCoordinator {
+    private func setupControllers() -> [TabBarModule] {
+        guard
+            let delegat = self.delegat
+        else { return []}
         
-        //FIXME: -
-
-//        let menu = MenuPopOverBuilder.buildAddMenu(delegat: delegat,
-//                                                   sourceView: sender)
-//        rootVC?.present(menu, animated: true)
+        return [
+            TabBarModule(
+                 coordinator: makeMapPlanPointsModule(),
+                 button: TabBarButton(icon: UIImage.TabBar.addLocation, style: .standard, text: "Карта меток"),
+                 delegate: delegat
+             ),
+            TabBarModule(
+                coordinator: makeCategoriesPointModule(),
+                button: TabBarButton(icon: UIImage.TabBar.clipboard, style: .standard, text: "Списки"),
+                delegate: delegat
+            ),
+            TabBarModule(
+                coordinator: .init(),
+                button: TabBarButton(icon: nil, style: .central, text: nil),
+                delegate: delegat
+            ),
+            TabBarModule(
+                coordinator: .init(),
+                button: TabBarButton(icon: UIImage.TabBar.mapPins, style: .standard, text: "Карта поездок"),
+                delegate: delegat
+            ),
+            TabBarModule(
+                coordinator: makeProfileModule(),
+                button: TabBarButton(icon: UIImage.TabBar.userAlt3, style: .standard, text: "Профиль"),
+                delegate: delegat
+            ),
+       ]
     }
-    
-    func showMenu(sender: UIView) {
-        //FIXME: - удалить процедуру
-    }
-
-    func openNewCalendarNotification() {
-        
-        //FIXME: -
-
-//        let coordinator = CreateDateNotificationCoordinator(container: container)
-//        children.append(coordinator)
-//        let vc = coordinator.start()
-//        
-//        coordinator.onDidFinish = { [weak self] coordinator in
-//            self?.children.removeAll {coordinator == $0 }
-//            vc.dismiss(animated: true)
-//        }
-//        
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.modalTransitionStyle = .coverVertical
-//        
-//        rootVC?.present(vc, animated: true)
-    }
-    
-    func openNewTimerNotification() {
-        
-        //FIXME: -
-
-//        let coordinator = CreateTimerNotificationCoordinator(container: container)
-//        children.append(coordinator)
-//        let vc = coordinator.start()
-//        
-//        coordinator.onDidFinish = { [weak self] coordinator in
-//            self?.children.removeAll {coordinator == $0 }
-//            vc.dismiss(animated: true)
-//        }
-//        
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.modalTransitionStyle = .coverVertical
-//        
-//        rootVC?.present(vc, animated: true)
-    }
-    
-    func openNewLocationNotification() {
-        
-        //FIXME: -
-
-//        let coordinator = CreateLocationNotificationCoordinator(container: container)
-//        children.append(coordinator)
-//        let vc = coordinator.start()
-//        
-//        coordinator.onDidFinish = { [weak self] coordinator in
-//            self?.children.removeAll {coordinator == $0 }
-//            vc.dismiss(animated: true)
-//        }
-//        
-//        vc.modalPresentationStyle = .fullScreen
-//        vc.modalTransitionStyle = .coverVertical
-//        
-//        rootVC?.present(vc, animated: true)
-    }
-    
-    
 }
-

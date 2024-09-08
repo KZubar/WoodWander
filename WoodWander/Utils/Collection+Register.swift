@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 extension UITableView {
     
@@ -29,6 +30,14 @@ extension UICollectionView {
     func dequeue<CellType: UICollectionViewCell>(at indexPath: IndexPath) -> CellType {
         return self.dequeueReusableCell(withReuseIdentifier: "\(CellType.self)",
                                         for: indexPath) as! CellType
+    }
+    
+}
+
+extension MKMapView {
+    
+    func dequeue<AnnotationViewType: MKAnnotationView>() -> AnnotationViewType {
+        return self.dequeueReusableAnnotationView(withIdentifier: "\(AnnotationViewType.self)") as! AnnotationViewType
     }
     
 }

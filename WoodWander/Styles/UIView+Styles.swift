@@ -12,14 +12,14 @@ extension UIView {
     static func setInfoView() -> UIView {
         let view = UIView()
         view.setShadow()
-        view.backgroundColor = .white
+        view.backgroundColor = .appWhite
         
         return view
     }
-    
+
     static func setContentView() -> UIView {
         let view = UIView()
-        view.backgroundColor = .systemGray3 //FIXME: .appGray
+        view.backgroundColor = .appWhite
         return view
     }
 

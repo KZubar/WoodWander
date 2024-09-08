@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 fileprivate enum L10n {
-    static let your_email: String = "profile_screen_your_email".localizaed
+    static let your_email: String = "Ваш адрес электронной почты:"
 }
 
 final class ProfileEmailCell: UITableViewCell {
@@ -17,7 +17,7 @@ final class ProfileEmailCell: UITableViewCell {
     private lazy var titLelabel: UILabel = {
         let label = UILabel()
         label.font = .appFont.withSize(15)
-        label.textColor = .black //FIXME: .appCellTitleText
+        label.textColor = .mainFont
         label.text = L10n.your_email
         return label
     }()
@@ -25,7 +25,7 @@ final class ProfileEmailCell: UITableViewCell {
     private lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.font = .appFont.withSize(17)
-        label.textColor = .black //FIXME: .appText
+        label.textColor = .mainFont
         return label
     }()
 

@@ -10,23 +10,30 @@ import Foundation
 import CoreData
 
 @objc(PlanPointMO)
-public class PlanPointMO: BasePointMO {
+public class PlanPointMO: NSManagedObject, MODescriptionPlanPoint {
     
-    public override func toDTO() -> (any  DTODescriptionPoint)? {
+    public func toDTO() -> (any  DTODescriptionPlanPoint)? {
         return PlanPointDTO.fromMO(self)
     }
-    
-    public override func apply(dto: any DTODescriptionPoint) {
+
+    public func apply(dto: any DTODescriptionPlanPoint) {
         guard let planDTO = dto as? PlanPointDTO
         else {
             print("[MODTO]", "\(Self.self) apply failed: dto is type off \(type(of: dto))")
             return
         }
         
-        super.apply(dto: planDTO)
-        
+        self.uuid = planDTO.uuid
+        self.date = planDTO.date
+        self.latitude = planDTO.latitude
+        self.longitude = planDTO.longitude
+        self.name = planDTO.name
+        self.descr = planDTO.descr
+        self.isDisabled = planDTO.isDisabled
         self.oblast = planDTO.oblast
         self.region = planDTO.region
+        self.color = planDTO.color ?? ""
+        self.icon = planDTO.icon ?? ""
         self.imagePathStr = planDTO.imagePathStr
         self.radiusInMeters = planDTO.radiusInMeters
         self.regionInMeters = planDTO.regionInMeters

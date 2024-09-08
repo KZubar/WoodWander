@@ -16,15 +16,16 @@ final class CoreDataService {
     private init() {}
     
     lazy var mainContext: NSManagedObjectContext = {
-            let context = persistentContainer.viewContext
-            context.automaticallyMergesChangesFromParent = true
-            return context
-        }()
+        let context = persistentContainer.viewContext
+        context.automaticallyMergesChangesFromParent = true
+        return context
+    }()
         
     var backgroundContext: NSManagedObjectContext {
         return persistentContainer.newBackgroundContext()
     }
-    
+        
+    //постоянный контейнер
     private var persistentContainer: NSPersistentContainer = {
         let modelName = "PointDataBase"
         let bundle = Bundle(for: CoreDataService.self)
@@ -50,10 +51,12 @@ final class CoreDataService {
         return container
     }()
     
+    //записать mainContext
     func saveMainContext (completion: CompletionHandler? = nil) {
         saveContext(context: mainContext, completion: completion )
     }
     
+    //записать context
     func saveContext (context: NSManagedObjectContext,
                       completion: CompletionHandler? = nil) {
         if context.hasChanges {

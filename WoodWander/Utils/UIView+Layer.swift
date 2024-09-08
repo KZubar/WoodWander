@@ -29,7 +29,7 @@ extension UIView {
                    shadOpacity: Float = 0.2) {
         self.clipsToBounds = false
         self.layer.cornerRadius = corRadius
-        self.layer.shadowColor = UIColor.black.cgColor // FIXME: - UIColor.appText.cgColor
+        self.layer.shadowColor = UIColor.mainFont.cgColor
         self.layer.shadowOffset = CGSize(width: shadRadius,
                                          height: shadRadius)
         self.layer.shadowRadius = shadRadius

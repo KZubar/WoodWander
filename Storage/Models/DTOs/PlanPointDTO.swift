@@ -8,11 +8,11 @@
 import Foundation
 import CoreData
 
-public struct PlanPointDTO: DTODescriptionPoint {
-    
+public struct PlanPointDTO: DTODescriptionPlanPoint {
+        
     public typealias MO = PlanPointMO
 
-    public var uuid: String?
+    public var uuid: String
     public var date: Date?
     public var latitude: Double
     public var longitude: Double
@@ -22,12 +22,14 @@ public struct PlanPointDTO: DTODescriptionPoint {
     
     public var oblast: String?
     public var region: String?
+    public var color: String?
+    public var icon: String?
     public var imagePathStr: String?
     public var radiusInMeters: Double
     public var regionInMeters: Double
 
     public init(
-        uuid: String?,
+        uuid: String,
         date: Date?,
         latitude: Double,
         longitude: Double,
@@ -38,6 +40,8 @@ public struct PlanPointDTO: DTODescriptionPoint {
         region: String?,
         regionInMeters: Double,
         radiusInMeters: Double,
+        color: String?,
+        icon: String?,
         imagePathStr: String?
     ) {
         self.uuid = uuid
@@ -50,11 +54,23 @@ public struct PlanPointDTO: DTODescriptionPoint {
         
         self.oblast = oblast
         self.region = region
+        self.color = color
+        self.icon = icon
         self.imagePathStr = imagePathStr
         self.radiusInMeters = radiusInMeters
         self.regionInMeters = regionInMeters
     }
-    
+
+    public init(latitude: Double = 0.0, longitude: Double = 0.0) {
+        self.uuid = UUID().uuidString
+        self.date = Date()
+        self.latitude = latitude
+        self.longitude = longitude
+        self.isDisabled = false
+        self.regionInMeters = 0.0
+        self.radiusInMeters = 0.0
+    }
+
     public static func fromMO(_ mo: PlanPointMO) -> PlanPointDTO? {
         guard
             let uuid = mo.uuid,
@@ -63,6 +79,8 @@ public struct PlanPointDTO: DTODescriptionPoint {
             let descr = mo.descr,
             let oblast = mo.oblast,
             let region = mo.region,
+            let icon = mo.icon,
+            let color = mo.color,
             let imagePathStr = mo.imagePathStr
         else { return nil }
         
@@ -77,6 +95,8 @@ public struct PlanPointDTO: DTODescriptionPoint {
                             region: region,
                             regionInMeters: mo.regionInMeters,
                             radiusInMeters: mo.radiusInMeters,
+                            color: color,
+                            icon: icon,
                             imagePathStr: imagePathStr)
 
     }
