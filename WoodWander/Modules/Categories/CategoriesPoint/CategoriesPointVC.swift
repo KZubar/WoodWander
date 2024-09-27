@@ -39,7 +39,7 @@ final class CategoriesPointVC: UIViewController {
     private lazy var tableView: UITableView = viewModel.makeTableView()
     
     private var viewModel: CategoriesPointViewModelProtocol
-    
+
     init(viewModel: CategoriesPointViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

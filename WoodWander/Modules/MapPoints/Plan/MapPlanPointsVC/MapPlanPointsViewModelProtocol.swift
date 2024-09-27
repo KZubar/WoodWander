@@ -10,44 +10,41 @@ import Storage
 
 protocol MapPlanPointsViewModelProtocol {
 
-    var addNewAnnotations: [LocationPin] { get set }
-    
-    var addNewPointByMap: ((_ annotation: (any MKAnnotation)?) -> Void)? { get set }
+    typealias CompletionHandler = (Bool) -> Void
 
     var tapPointCoordinate: CLLocationCoordinate2D {get set}
     var tapPointDescription: PlanPointDescription? {get set}
-    var pointDtos: [any DTODescriptionPlanPoint] {get set}
-    var distance: Double {get set}
     
-    func registerLocationAnnotation(mapView: MKMapView)
+    var pointDtos: [any DTODescriptionPlanPoint] {get set}
+    
+    var distance: Double {get set}
+    //можно удалить из протокола?
+    var previousZoomScale: Double {get set}
     
     func removeLastPointAnnotation(mapView: MKMapView)
     
     func changeSizeMarker(param: LocationPinParameters, mapView: MKMapView)
     
-//перевел в приват
-//    func initTapPoint(mapView: MKMapView, point: CGPoint) -> CLLocationCoordinate2D?
-    
-//перевел в приват
-//    func isAnnotationInArea(mapView: MKMapView, point: CGPoint, sizeAnnotation: CGSize, addToSize: Double) -> Bool
-    
     func getUserLocation() -> CLLocationCoordinate2D?
-    
-    func getParamForRegion(mapView: MKMapView) -> LocationPinParameters
-    
+    func getCurrentRegionInMeters(mapView: MKMapView) -> CLLocationDistance
     func distanceTo(locationCoordinate: CLLocationCoordinate2D) -> Double
-    
     func setUserRegion(mapView: MKMapView)
-    
+    func deletePoint(mapView: MKMapView)
+
     func viewDidLoad(mapView: MKMapView)
+    func viewWillAppear(mapView: MKMapView)
     
     func startCreatePlanPointModule()
-
     func startCategoriesPointModule()
-    
     func startIconModule()
     
     func mapViewHandleSingleTap(mapView: MKMapView, point: CGPoint) -> Bool
+    func mapViewSearchPointByText(mapView: MKMapView,
+                                  searchText: String?) -> CLLocationCoordinate2D?
     
-    //func color(forDensity density: Double) -> UIColor
+    func mapViewAnnotationDidSelect(mapView: MKMapView, view: MKAnnotationView) -> Bool
+    func mapViewAnnotationDidDeselect(mapView: MKMapView, view: MKAnnotationView)
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool)
+    
+    func addAnnotations(mapView: MKMapView)
 }

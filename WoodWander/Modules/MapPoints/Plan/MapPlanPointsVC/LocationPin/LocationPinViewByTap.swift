@@ -19,7 +19,7 @@ final class LocationPinViewByTap: MKAnnotationView {
         didSet {
             if isSelected {
                 UIView.animate(withDuration: 0.10) {
-                    self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                    self.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
                 }
             } else {
                 UIView.animate(withDuration: 0.10) {
@@ -55,7 +55,7 @@ final class LocationPinViewByTap: MKAnnotationView {
 
     func setupIcon() {
         if let marker = annotation as? LocationPinByTap {
-            self.param = marker.param
+            //пусть будет всегда большим ----- self.param = marker.param
             
             pointView.frame = .init(origin: .zero, size: param.sizeRenderer)
             

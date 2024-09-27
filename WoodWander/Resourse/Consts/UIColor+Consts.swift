@@ -40,6 +40,8 @@ fileprivate enum AppColor {
     /// Tetrialy font color
     /// Dark theme: steel
     static let tetrialyFontDark = #colorLiteral(red: 0.49, green: 0.51, blue: 0.58, alpha: 1.0)
+    
+    static let defaultByMarker = #colorLiteral(red: 0.49, green: 0.51, blue: 0.58, alpha: 1.0)
 
     static let greenBlue    = #colorLiteral(red: 0, green: 0.8, blue: 0.47, alpha: 1)
     static let butterScotch = #colorLiteral(red: 1.0, green: 0.76, blue: 0.23, alpha: 1.0)
@@ -152,6 +154,12 @@ extension UIColor {
     static var appBlueLight: UIColor {
         return UIColor { traitCollection in
             traitCollection.userInterfaceStyle == .dark ? AppColor.blueLight : AppColor.blueLight
+        }
+    }
+
+    static var defaultByMarker: UIColor {
+        return UIColor { traitCollection in
+            traitCollection.userInterfaceStyle == .dark ? AppColor.defaultByMarker : AppColor.defaultByMarker
         }
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E45BCAA2AD6A074283EDBD5 /* Pods_Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61396258D3325EFD74BB6BC7 /* Pods_Storage.framework */; };
 		44C7251BA9FA70FFFE57A212 /* Pods_StorageBLR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244277C8B6389BADFEEFB62D /* Pods_StorageBLR.framework */; };
+		D30F3C532CA4442000B0BE76 /* SearchGeoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30F3C522CA4442000B0BE76 /* SearchGeoView.swift */; };
 		D315172F2C35CB0700FE34EB /* PointDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D315172D2C35CB0700FE34EB /* PointDataBase.xcdatamodeld */; };
 		D31517492C36A4A500FE34EB /* BlrDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31517482C36A4A500FE34EB /* BlrDataWorker.swift */; };
 		D31517522C36A69B00FE34EB /* StorageBLR.h in Headers */ = {isa = PBXBuildFile; fileRef = D31517512C36A69B00FE34EB /* StorageBLR.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,13 +89,10 @@
 		D332124E2C2D424400227928 /* MapPlanPointsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332124D2C2D424400227928 /* MapPlanPointsAssembler.swift */; };
 		D33212502C2D471D00227928 /* UIMapKit+CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332124F2C2D471D00227928 /* UIMapKit+CLLocationManager.swift */; };
 		D33212532C2D489B00227928 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33212522C2D489A00227928 /* AlertService.swift */; };
-		D33212562C2D4AEE00227928 /* AlertService+MapPlanPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33212552C2D4AEE00227928 /* AlertService+MapPlanPoints.swift */; };
-		D33212582C2D4BAE00227928 /* FRCServicePlanPoint+MapPlanPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33212572C2D4BAE00227928 /* FRCServicePlanPoint+MapPlanPoints.swift */; };
 		D332125B2C2D4D0F00227928 /* MKMapViewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332125A2C2D4D0F00227928 /* MKMapViewService.swift */; };
 		D332125D2C2D6D2300227928 /* EventDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332125C2C2D6D2300227928 /* EventDataSourse.swift */; };
 		D33212602C2E737700227928 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332125F2C2E737700227928 /* TabBarController.swift */; };
 		D33212642C2E753F00227928 /* UIColor+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33212632C2E753F00227928 /* UIColor+Consts.swift */; };
-		D33212662C2E780700227928 /* UIFont+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33212652C2E780700227928 /* UIFont+Icon.swift */; };
 		D33212682C2E899000227928 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33212672C2E899000227928 /* TabBar.swift */; };
 		D332126B2C2E8FB500227928 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D332126A2C2E8C9100227928 /* icomoon.ttf */; };
 		D336B8782C589ED7007EB986 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336B8772C589ED7007EB986 /* LineTextField.swift */; };
@@ -123,13 +121,6 @@
 		D373EF8E2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373EF8D2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift */; };
 		D39CF1C42C57608300C80B1D /* CreatePlanPointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1C32C57608300C80B1D /* CreatePlanPointVC.swift */; };
 		D39CF1C62C57C3BF00C80B1D /* NewPlaceDescriptionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1C52C57C3BF00C80B1D /* NewPlaceDescriptionButtonView.swift */; };
-		D39CF1C92C57E71100C80B1D /* MapPlanPointsVC_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1C82C57E71100C80B1D /* MapPlanPointsVC_copy.swift */; };
-		D39CF1CB2C57E72400C80B1D /* MapPlanPointsVM_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1CA2C57E72400C80B1D /* MapPlanPointsVM_copy.swift */; };
-		D39CF1CD2C57E76500C80B1D /* MapPlanPointsViewModelProtocol_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1CC2C57E76500C80B1D /* MapPlanPointsViewModelProtocol_copy.swift */; };
-		D39CF1CF2C57E7AC00C80B1D /* LocationPin_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1CE2C57E7AC00C80B1D /* LocationPin_copy.swift */; };
-		D39CF1D12C57E7BD00C80B1D /* LocationPinView_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1D02C57E7BD00C80B1D /* LocationPinView_copy.swift */; };
-		D39CF1D32C57E7DE00C80B1D /* LocationMarkerView_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1D22C57E7DE00C80B1D /* LocationMarkerView_copy.swift */; };
-		D39CF1D52C57E7F000C80B1D /* LocationClusterView_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1D42C57E7F000C80B1D /* LocationClusterView_copy.swift */; };
 		D39CF1D82C57EA9C00C80B1D /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1D72C57EA9C00C80B1D /* UILabel+Styles.swift */; };
 		D3B4E2732C38FE050031EF14 /* BlrMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4E26F2C38FE050031EF14 /* BlrMO+CoreDataClass.swift */; };
 		D3B4E2742C38FE050031EF14 /* BlrMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4E2702C38FE050031EF14 /* BlrMO+CoreDataProperties.swift */; };
@@ -143,17 +134,14 @@
 		D3B4E2822C397DBE0031EF14 /* BlrCoordinateStorage+Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4E2812C397DBE0031EF14 /* BlrCoordinateStorage+Delete.swift */; };
 		D3B4E2872C3A92AF0031EF14 /* BlrDataSourseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4E2862C3A92AF0031EF14 /* BlrDataSourseService.swift */; };
 		D3B4E28B2C3B1D0D0031EF14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4E28A2C3B1D0D0031EF14 /* User.swift */; };
-		D3B4E28D2C53C9A20031EF14 /* FRCServiceBLR+MapPlanPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4E28C2C53C9A20031EF14 /* FRCServiceBLR+MapPlanPoints.swift */; };
 		D3B9F4AB2C5FD50B0039CD13 /* MKMapView+Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B9F4AA2C5FD50B0039CD13 /* MKMapView+Consts.swift */; };
 		D3B9F4AD2C60B2730039CD13 /* LocationPinViewParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B9F4AC2C60B2730039CD13 /* LocationPinViewParameters.swift */; };
 		D3E58D562C8DCCD100A07EC9 /* MapPlanPointsViewModel+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E58D552C8DCCD100A07EC9 /* MapPlanPointsViewModel+Protocol.swift */; };
 		D3E58D582C8E036500A07EC9 /* LocationPinByTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E58D572C8E036400A07EC9 /* LocationPinByTap.swift */; };
 		D3E58D5A2C8E03FD00A07EC9 /* LocationPinViewByTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E58D592C8E03FD00A07EC9 /* LocationPinViewByTap.swift */; };
+		D3E58D5C2C8E282A00A07EC9 /* PlanPointDataWorker+MapPlanPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E58D5B2C8E282A00A07EC9 /* PlanPointDataWorker+MapPlanPoints.swift */; };
+		D3E58D5E2C99FC1700A07EC9 /* ColorPickerBigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E58D5D2C99FC1600A07EC9 /* ColorPickerBigView.swift */; };
 		D3E985042C69FAC50049AA2B /* UIColor+Convertation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985032C69FAC50049AA2B /* UIColor+Convertation.swift */; };
-		D3E985082C6A32020049AA2B /* IconPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985072C6A32020049AA2B /* IconPickerVC.swift */; };
-		D3E9850A2C6A32130049AA2B /* IconPickerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985092C6A32130049AA2B /* IconPickerVM.swift */; };
-		D3E9850C2C6A322B0049AA2B /* IconPickerAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9850B2C6A322B0049AA2B /* IconPickerAssembler.swift */; };
-		D3E9850E2C6A32370049AA2B /* IconPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9850D2C6A32370049AA2B /* IconPickerCoordinator.swift */; };
 		D3E985152C762F450049AA2B /* CategoriesPointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985142C762F450049AA2B /* CategoriesPointVC.swift */; };
 		D3E985172C762F920049AA2B /* CategoriesPointViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985162C762F920049AA2B /* CategoriesPointViewModelProtocol.swift */; };
 		D3E985192C7631460049AA2B /* CategoriesPointVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985182C7631460049AA2B /* CategoriesPointVM.swift */; };
@@ -246,6 +234,7 @@
 		8C08A9069F5223B5DF31BD03 /* Pods-WoodWander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodWander.release.xcconfig"; path = "Target Support Files/Pods-WoodWander/Pods-WoodWander.release.xcconfig"; sourceTree = "<group>"; };
 		8CD1FB5359F934B42116B1C9 /* Pods-StorageBLR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorageBLR.debug.xcconfig"; path = "Target Support Files/Pods-StorageBLR/Pods-StorageBLR.debug.xcconfig"; sourceTree = "<group>"; };
 		93E4257C0E5EB45BCA1E651B /* Pods_WoodWander.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoodWander.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D30F3C522CA4442000B0BE76 /* SearchGeoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGeoView.swift; sourceTree = "<group>"; };
 		D315172E2C35CB0700FE34EB /* PointDataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PointDataBase.xcdatamodel; sourceTree = "<group>"; };
 		D31517342C35CD0000FE34EB /* DTODescriptionBLR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescriptionBLR.swift; sourceTree = "<group>"; };
 		D31517362C35D0E500FE34EB /* BlrDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlrDTO.swift; sourceTree = "<group>"; };
@@ -325,13 +314,10 @@
 		D332124D2C2D424400227928 /* MapPlanPointsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlanPointsAssembler.swift; sourceTree = "<group>"; };
 		D332124F2C2D471D00227928 /* UIMapKit+CLLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMapKit+CLLocationManager.swift"; sourceTree = "<group>"; };
 		D33212522C2D489A00227928 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
-		D33212552C2D4AEE00227928 /* AlertService+MapPlanPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertService+MapPlanPoints.swift"; sourceTree = "<group>"; };
-		D33212572C2D4BAE00227928 /* FRCServicePlanPoint+MapPlanPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FRCServicePlanPoint+MapPlanPoints.swift"; sourceTree = "<group>"; };
 		D332125A2C2D4D0F00227928 /* MKMapViewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewService.swift; sourceTree = "<group>"; };
 		D332125C2C2D6D2300227928 /* EventDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataSourse.swift; sourceTree = "<group>"; };
 		D332125F2C2E737700227928 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D33212632C2E753F00227928 /* UIColor+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Consts.swift"; sourceTree = "<group>"; };
-		D33212652C2E780700227928 /* UIFont+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Icon.swift"; sourceTree = "<group>"; };
 		D33212672C2E899000227928 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D332126A2C2E8C9100227928 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		D336B8772C589ED7007EB986 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
@@ -360,13 +346,6 @@
 		D373EF8D2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPCategoriesDataWorker+CreateCategoriesPoint.swift"; sourceTree = "<group>"; };
 		D39CF1C32C57608300C80B1D /* CreatePlanPointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlanPointVC.swift; sourceTree = "<group>"; };
 		D39CF1C52C57C3BF00C80B1D /* NewPlaceDescriptionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceDescriptionButtonView.swift; sourceTree = "<group>"; };
-		D39CF1C82C57E71100C80B1D /* MapPlanPointsVC_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlanPointsVC_copy.swift; sourceTree = "<group>"; };
-		D39CF1CA2C57E72400C80B1D /* MapPlanPointsVM_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlanPointsVM_copy.swift; sourceTree = "<group>"; };
-		D39CF1CC2C57E76500C80B1D /* MapPlanPointsViewModelProtocol_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlanPointsViewModelProtocol_copy.swift; sourceTree = "<group>"; };
-		D39CF1CE2C57E7AC00C80B1D /* LocationPin_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPin_copy.swift; sourceTree = "<group>"; };
-		D39CF1D02C57E7BD00C80B1D /* LocationPinView_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPinView_copy.swift; sourceTree = "<group>"; };
-		D39CF1D22C57E7DE00C80B1D /* LocationMarkerView_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMarkerView_copy.swift; sourceTree = "<group>"; };
-		D39CF1D42C57E7F000C80B1D /* LocationClusterView_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClusterView_copy.swift; sourceTree = "<group>"; };
 		D39CF1D72C57EA9C00C80B1D /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
 		D3B4E26F2C38FE050031EF14 /* BlrMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlrMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D3B4E2702C38FE050031EF14 /* BlrMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlrMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -380,17 +359,14 @@
 		D3B4E2812C397DBE0031EF14 /* BlrCoordinateStorage+Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlrCoordinateStorage+Delete.swift"; sourceTree = "<group>"; };
 		D3B4E2862C3A92AF0031EF14 /* BlrDataSourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlrDataSourseService.swift; sourceTree = "<group>"; };
 		D3B4E28A2C3B1D0D0031EF14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D3B4E28C2C53C9A20031EF14 /* FRCServiceBLR+MapPlanPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FRCServiceBLR+MapPlanPoints.swift"; sourceTree = "<group>"; };
 		D3B9F4AA2C5FD50B0039CD13 /* MKMapView+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Consts.swift"; sourceTree = "<group>"; };
 		D3B9F4AC2C60B2730039CD13 /* LocationPinViewParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPinViewParameters.swift; sourceTree = "<group>"; };
 		D3E58D552C8DCCD100A07EC9 /* MapPlanPointsViewModel+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapPlanPointsViewModel+Protocol.swift"; sourceTree = "<group>"; };
 		D3E58D572C8E036400A07EC9 /* LocationPinByTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPinByTap.swift; sourceTree = "<group>"; };
 		D3E58D592C8E03FD00A07EC9 /* LocationPinViewByTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPinViewByTap.swift; sourceTree = "<group>"; };
+		D3E58D5B2C8E282A00A07EC9 /* PlanPointDataWorker+MapPlanPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlanPointDataWorker+MapPlanPoints.swift"; sourceTree = "<group>"; };
+		D3E58D5D2C99FC1600A07EC9 /* ColorPickerBigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerBigView.swift; sourceTree = "<group>"; };
 		D3E985032C69FAC50049AA2B /* UIColor+Convertation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Convertation.swift"; sourceTree = "<group>"; };
-		D3E985072C6A32020049AA2B /* IconPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerVC.swift; sourceTree = "<group>"; };
-		D3E985092C6A32130049AA2B /* IconPickerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerVM.swift; sourceTree = "<group>"; };
-		D3E9850B2C6A322B0049AA2B /* IconPickerAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerAssembler.swift; sourceTree = "<group>"; };
-		D3E9850D2C6A32370049AA2B /* IconPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPickerCoordinator.swift; sourceTree = "<group>"; };
 		D3E985142C762F450049AA2B /* CategoriesPointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointVC.swift; sourceTree = "<group>"; };
 		D3E985162C762F920049AA2B /* CategoriesPointViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointViewModelProtocol.swift; sourceTree = "<group>"; };
 		D3E985182C7631460049AA2B /* CategoriesPointVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointVM.swift; sourceTree = "<group>"; };
@@ -1003,6 +979,7 @@
 				D332124A2C2D41FB00227928 /* UseCases */,
 				D33212372C2D2E0A00227928 /* MapPlanPointsViewModelProtocol.swift */,
 				D3E58D552C8DCCD100A07EC9 /* MapPlanPointsViewModel+Protocol.swift */,
+				D30F3C522CA4442000B0BE76 /* SearchGeoView.swift */,
 				D33212332C2D2DCD00227928 /* MapPlanPointsVC.swift */,
 				D33212352C2D2DD600227928 /* MapPlanPointsVM.swift */,
 			);
@@ -1013,8 +990,8 @@
 			isa = PBXGroup;
 			children = (
 				D332123A2C2D313F00227928 /* LocationPin.swift */,
-				D3E58D572C8E036400A07EC9 /* LocationPinByTap.swift */,
 				D332123C2C2D318400227928 /* LocationPinView.swift */,
+				D3E58D572C8E036400A07EC9 /* LocationPinByTap.swift */,
 				D3E58D592C8E03FD00A07EC9 /* LocationPinViewByTap.swift */,
 				D3B9F4AC2C60B2730039CD13 /* LocationPinViewParameters.swift */,
 			);
@@ -1042,9 +1019,7 @@
 		D332124A2C2D41FB00227928 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				D33212552C2D4AEE00227928 /* AlertService+MapPlanPoints.swift */,
-				D33212572C2D4BAE00227928 /* FRCServicePlanPoint+MapPlanPoints.swift */,
-				D3B4E28C2C53C9A20031EF14 /* FRCServiceBLR+MapPlanPoints.swift */,
+				D3E58D5B2C8E282A00A07EC9 /* PlanPointDataWorker+MapPlanPoints.swift */,
 				D3672C5C2C31962E00AF8C6A /* MKMapViewService+MapPlanPoint.swift */,
 				D3672C662C336B5800AF8C6A /* LocationHelper+MapPlanPoints.swift */,
 			);
@@ -1118,20 +1093,6 @@
 			path = PlanPoint;
 			sourceTree = "<group>";
 		};
-		D336B8912C59422F007EB986 /* COPY */ = {
-			isa = PBXGroup;
-			children = (
-				D39CF1D02C57E7BD00C80B1D /* LocationPinView_copy.swift */,
-				D39CF1CE2C57E7AC00C80B1D /* LocationPin_copy.swift */,
-				D39CF1D42C57E7F000C80B1D /* LocationClusterView_copy.swift */,
-				D39CF1D22C57E7DE00C80B1D /* LocationMarkerView_copy.swift */,
-				D39CF1CC2C57E76500C80B1D /* MapPlanPointsViewModelProtocol_copy.swift */,
-				D39CF1C82C57E71100C80B1D /* MapPlanPointsVC_copy.swift */,
-				D39CF1CA2C57E72400C80B1D /* MapPlanPointsVM_copy.swift */,
-			);
-			path = COPY;
-			sourceTree = "<group>";
-		};
 		D3672C572C31726400AF8C6A /* Custom */ = {
 			isa = PBXGroup;
 			children = (
@@ -1143,6 +1104,7 @@
 				D336B87F2C58A5EF007EB986 /* LineTextView.swift */,
 				D363A9E52C675BBB00CA49CF /* CircleView.swift */,
 				D3E9858C2C7F24E60049AA2B /* EmojiPickerBigView.swift */,
+				D3E58D5D2C99FC1600A07EC9 /* ColorPickerBigView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1170,17 +1132,17 @@
 				D31517472C36A47A00FE34EB /* Blr */,
 				D3E9854F2C7B2F7E0049AA2B /* CategoriesPoint */,
 				D336B88C2C58C2AD007EB986 /* PlanPoint */,
-				D373EF8A2C8513410037CD3D /* PlanPointCategories */,
+				D373EF8A2C8513410037CD3D /* PPCategories */,
 			);
 			path = DataWorker;
 			sourceTree = "<group>";
 		};
-		D373EF8A2C8513410037CD3D /* PlanPointCategories */ = {
+		D373EF8A2C8513410037CD3D /* PPCategories */ = {
 			isa = PBXGroup;
 			children = (
 				D373EF8B2C85137B0037CD3D /* PPCategoriesDataWorker.swift */,
 			);
-			path = PlanPointCategories;
+			path = PPCategories;
 			sourceTree = "<group>";
 		};
 		D39CF1C12C57603100C80B1D /* CreatePoints */ = {
@@ -1245,9 +1207,6 @@
 		D3B4E2882C3AFB5E0031EF14 /* Delete */ = {
 			isa = PBXGroup;
 			children = (
-				D3E985052C6A31C30049AA2B /* IconPicker - add class */,
-				D336B8912C59422F007EB986 /* COPY */,
-				D33212652C2E780700227928 /* UIFont+Icon.swift */,
 				D332122D2C2D23F200227928 /* BLRModel - delete */,
 			);
 			path = Delete;
@@ -1259,25 +1218,6 @@
 				D3B4E28A2C3B1D0D0031EF14 /* User.swift */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		D3E985052C6A31C30049AA2B /* IconPicker - add class */ = {
-			isa = PBXGroup;
-			children = (
-				D3E985062C6A31E50049AA2B /* Coordinator */,
-				D3E985072C6A32020049AA2B /* IconPickerVC.swift */,
-				D3E985092C6A32130049AA2B /* IconPickerVM.swift */,
-			);
-			path = "IconPicker - add class";
-			sourceTree = "<group>";
-		};
-		D3E985062C6A31E50049AA2B /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				D3E9850B2C6A322B0049AA2B /* IconPickerAssembler.swift */,
-				D3E9850D2C6A32370049AA2B /* IconPickerCoordinator.swift */,
-			);
-			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		D3E9850F2C762D620049AA2B /* CategoriesPoint */ = {
@@ -1772,9 +1712,8 @@
 				D39CF1C42C57608300C80B1D /* CreatePlanPointVC.swift in Sources */,
 				D373EF8C2C85137B0037CD3D /* PPCategoriesDataWorker.swift in Sources */,
 				D332125B2C2D4D0F00227928 /* MKMapViewService.swift in Sources */,
-				D33212662C2E780700227928 /* UIFont+Icon.swift in Sources */,
 				D3672C672C336B5800AF8C6A /* LocationHelper+MapPlanPoints.swift in Sources */,
-				D3E985082C6A32020049AA2B /* IconPickerVC.swift in Sources */,
+				D3E58D5E2C99FC1700A07EC9 /* ColorPickerBigView.swift in Sources */,
 				D3E9857D2C7D69230049AA2B /* ChooseCategoriesPointHeadView.swift in Sources */,
 				D3E58D582C8E036500A07EC9 /* LocationPinByTap.swift in Sources */,
 				D332124C2C2D422900227928 /* MapPlanPointsCoordinator.swift in Sources */,
@@ -1791,7 +1730,6 @@
 				D363A9E62C675BBB00CA49CF /* CircleView.swift in Sources */,
 				D33211D82C2B2BCD00227928 /* UIView+Layer.swift in Sources */,
 				D3E9857B2C7D68C30049AA2B /* ChooseCategoriesPointSections.swift in Sources */,
-				D3B4E28D2C53C9A20031EF14 /* FRCServiceBLR+MapPlanPoints.swift in Sources */,
 				D3672C5D2C31962E00AF8C6A /* MKMapViewService+MapPlanPoint.swift in Sources */,
 				D3E985192C7631460049AA2B /* CategoriesPointVM.swift in Sources */,
 				D3E985742C7D61C90049AA2B /* FRCServiceCategoriesPoint+ChooseCategoriesPoint.swift in Sources */,
@@ -1809,10 +1747,8 @@
 				D3E985332C776FB30049AA2B /* FRCServiceCategoriesPoint+CategoriesPoint.swift in Sources */,
 				D3EE262C2C34440000C7A698 /* CLLocationCoordinate2D.swift in Sources */,
 				D332125D2C2D6D2300227928 /* EventDataSourse.swift in Sources */,
-				D39CF1D32C57E7DE00C80B1D /* LocationMarkerView_copy.swift in Sources */,
 				D3E985792C7D68880049AA2B /* ChooseCategoriesPointAdapter.swift in Sources */,
 				D33211E32C2B2DFD00227928 /* ProfileSections.swift in Sources */,
-				D39CF1CD2C57E76500C80B1D /* MapPlanPointsViewModelProtocol_copy.swift in Sources */,
 				D33212302C2D248100227928 /* GeoJSON.swift in Sources */,
 				D33211AD2C2B1E3100227928 /* MainTabBarAssembler.swift in Sources */,
 				D3E9852D2C775A790049AA2B /* CategoriesPointCell.swift in Sources */,
@@ -1821,12 +1757,11 @@
 				D336B88B2C58BC99007EB986 /* CreatePlanPointCoordinator.swift in Sources */,
 				D332118B2C2B139A00227928 /* AppCoordinator.swift in Sources */,
 				D3E985432C790E4A0049AA2B /* CreateCategoriesPointVM.swift in Sources */,
+				D30F3C532CA4442000B0BE76 /* SearchGeoView.swift in Sources */,
 				D3E9856E2C7D61410049AA2B /* ChooseCategoriesPointViewModelProtocol.swift in Sources */,
 				D33212382C2D2E0A00227928 /* MapPlanPointsViewModelProtocol.swift in Sources */,
 				D3E985722C7D617B0049AA2B /* ChooseCategoriesPointCoordinator.swift in Sources */,
-				D3E9850A2C6A32130049AA2B /* IconPickerVM.swift in Sources */,
 				D33212422C2D326F00227928 /* LocationClusterView.swift in Sources */,
-				D39CF1CF2C57E7AC00C80B1D /* LocationPin_copy.swift in Sources */,
 				D336B8782C589ED7007EB986 /* LineTextField.swift in Sources */,
 				D33211CC2C2B28C200227928 /* NotificationDataWorker+Profile.swift in Sources */,
 				D3B4E2872C3A92AF0031EF14 /* BlrDataSourseService.swift in Sources */,
@@ -1839,16 +1774,14 @@
 				D33211852C2AF82900227928 /* UIFont+Consts.swift in Sources */,
 				D33211862C2AF82900227928 /* UIColor+Delete.swift in Sources */,
 				D33211CA2C2B28C200227928 /* AlertService+Profile.swift in Sources */,
-				D33212562C2D4AEE00227928 /* AlertService+MapPlanPoints.swift in Sources */,
+				D3E58D5C2C8E282A00A07EC9 /* PlanPointDataWorker+MapPlanPoints.swift in Sources */,
 				D33212642C2E753F00227928 /* UIColor+Consts.swift in Sources */,
-				D39CF1CB2C57E72400C80B1D /* MapPlanPointsVM_copy.swift in Sources */,
 				D3B9F4AB2C5FD50B0039CD13 /* MKMapView+Consts.swift in Sources */,
 				D33212362C2D2DD600227928 /* MapPlanPointsVM.swift in Sources */,
 				D33211842C2AF82900227928 /* UIImage+Consts.swift in Sources */,
 				D33212502C2D471D00227928 /* UIMapKit+CLLocationManager.swift in Sources */,
 				D33212282C2CB62D00227928 /* BLR0Model.swift in Sources */,
 				D33211AF2C2B1E4100227928 /* MainTabBarCoordinator.swift in Sources */,
-				D3E9850E2C6A32370049AA2B /* IconPickerCoordinator.swift in Sources */,
 				D3E985552C7B319B0049AA2B /* CreateCategoriesPointAssembler.swift in Sources */,
 				D33211C22C2B28A700227928 /* ProfileAssembler.swift in Sources */,
 				D33211E12C2B2DEA00227928 /* ProfileHeadView.swift in Sources */,
@@ -1857,20 +1790,16 @@
 				D3E985312C776A870049AA2B /* CategoriesPointCoordinator.swift in Sources */,
 				D332123B2C2D313F00227928 /* LocationPin.swift in Sources */,
 				D3E9855B2C7B5F050049AA2B /* InputDataTextField.swift in Sources */,
-				D39CF1D52C57E7F000C80B1D /* LocationClusterView_copy.swift in Sources */,
 				D33211C32C2B28A700227928 /* ProfileCoordinator.swift in Sources */,
-				D39CF1C92C57E71100C80B1D /* MapPlanPointsVC_copy.swift in Sources */,
 				D3E985152C762F450049AA2B /* CategoriesPointVC.swift in Sources */,
 				D332116B2C2ADB5000227928 /* AppDelegate.swift in Sources */,
 				D3672C602C3342E800AF8C6A /* LocationHelper.swift in Sources */,
 				D332123D2C2D318400227928 /* LocationPinView.swift in Sources */,
 				D336B8902C58C37D007EB986 /* PointDataWorker+PlanPoint.swift in Sources */,
 				D33211DF2C2B2DDD00227928 /* ProfileSettingsCell.swift in Sources */,
-				D33212582C2D4BAE00227928 /* FRCServicePlanPoint+MapPlanPoints.swift in Sources */,
 				D33212532C2D489B00227928 /* AlertService.swift in Sources */,
 				D3EE26302C3470E800C7A698 /* Converter.swift in Sources */,
 				D33211922C2B14F700227928 /* Container.swift in Sources */,
-				D39CF1D12C57E7BD00C80B1D /* LocationPinView_copy.swift in Sources */,
 				D336B88E2C58C2BA007EB986 /* PlanPointDataWorker.swift in Sources */,
 				D336B8872C58AE90007EB986 /* PlanPointDescription.swift in Sources */,
 				D373EF8E2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift in Sources */,
@@ -1879,7 +1808,6 @@
 				D33211DD2C2B2DD200227928 /* ProfileEmailCell.swift in Sources */,
 				D332124E2C2D424400227928 /* MapPlanPointsAssembler.swift in Sources */,
 				D33211A92C2B1DD700227928 /* MainTabBarVC.swift in Sources */,
-				D3E9850C2C6A322B0049AA2B /* IconPickerAssembler.swift in Sources */,
 				D33211CD2C2B28C200227928 /* CurrentUserService+Profile.swift in Sources */,
 				D3E985042C69FAC50049AA2B /* UIColor+Convertation.swift in Sources */,
 				D332118F2C2B146800227928 /* Coordinator.swift in Sources */,
@@ -2161,7 +2089,7 @@
 				DEVELOPMENT_TEAM = C39ZWZ5NT6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WoodWander/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WoodWander;
+				INFOPLIST_KEY_CFBundleDisplayName = WanderWood;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show geo points";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2199,7 +2127,7 @@
 				DEVELOPMENT_TEAM = C39ZWZ5NT6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WoodWander/App/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WoodWander;
+				INFOPLIST_KEY_CFBundleDisplayName = WanderWood;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To show geo points";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

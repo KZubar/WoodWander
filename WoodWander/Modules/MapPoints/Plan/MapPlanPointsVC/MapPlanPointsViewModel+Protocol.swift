@@ -12,11 +12,9 @@ import Storage
 //Coordinator
 protocol MapPlanPointsCoordinatorProtocol: AnyObject {
     func startCreatePlanPointModule(
-        delegate: MapPlanPointsViewModelDelegat?,
         point: PlanPointDescription
     )
     func startCategoriesPointModule(
-        delegate: MapPlanPointsViewModelDelegat?,
         point: PlanPointDescription
     )
     func startIconModule()
@@ -24,9 +22,12 @@ protocol MapPlanPointsCoordinatorProtocol: AnyObject {
 
 //MKMapViewService
 protocol MapPlanPointsMKMapViewServiceUseCase {
+    func getZoomScale(mapView: MKMapView) -> Double
     func getRadiusImage(region: MKCoordinateRegion) -> CLLocationDistance
     func getRegionInMeters(region: MKCoordinateRegion) -> (x: Double, y: Double)
+    func getCurrentRegionInMeters(mapView: MKMapView) -> CLLocationDistance
     func getParamForRegion(mapView: MKMapView) -> LocationPinParameters
+    func convertToCoordinate2D(from input: String) -> CLLocationCoordinate2D?
     
     func distanceByFormulaTo(
         point locationCoordinate: CLLocationCoordinate2D,
@@ -41,32 +42,23 @@ protocol MapPlanPointsMKMapViewServiceUseCase {
     ) -> MKMapRect
 }
 
-//BlrDataWorker
-protocol MapPlanPointsBlrDataWorkerUseCase {
+//PlanPointDataWorker
+protocol MapPlanPointsPlanPointDataWorkerUseCase {
+    
+    typealias CompletionHandler = (Bool) -> Void
+
     func fetch(
         predicate: NSPredicate?,
         sortDescriptors: [NSSortDescriptor]
-    ) -> [any DTODescriptionBLR]
-}
-
-//FRCServicePlanPoint
-protocol MapPlanPointsFRCServicePlanPointUseCase {
-    var fetcherDTOs: [any DTODescriptionPlanPoint] { get }
-    var didChangeContent: (([any DTODescriptionPlanPoint]) -> Void)? { get set }
-    func startHandle()
-}
-
-//AlertService
-protocol MapPlanPointsAlertServiceUseCase {
-    typealias AlertActionHandler = () -> Void
+    ) -> [any DTODescriptionPlanPoint]
     
-    func showAlertSettings(title: String?,
-                           message: String?,
-                           cancelTitle: String?,
-                           cancelHandler: AlertActionHandler?,
-                           settingsTitle: String?,
-                           settingsHandler: AlertActionHandler?,
-                           url: URL?)
+    func fetchPPCategories(
+        predicate: NSPredicate?,
+        sortDescriptors: [NSSortDescriptor]
+    ) -> [any DTODescriptionPPCategories]
+    
+    func deleteByUser(dto: (any DTODescriptionPlanPoint),
+                      completion: CompletionHandler?)
 }
 
 //LocationHelper

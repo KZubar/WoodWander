@@ -52,18 +52,21 @@ final class MainTabBarCoordinator: Coordinator {
 
 extension MainTabBarCoordinator {
     private func setupControllers() -> [TabBarModule] {
-        guard
-            let delegat = self.delegat
-        else { return []}
         
+        guard let delegat = self.delegat else { return [] }
+        
+        let mapPlanPoints = makeMapPlanPointsModule()
+        let categoriesPointModule = makeCategoriesPointModule()
+        let profileModule = makeProfileModule()
+ 
         return [
             TabBarModule(
-                 coordinator: makeMapPlanPointsModule(),
+                 coordinator: mapPlanPoints,
                  button: TabBarButton(icon: UIImage.TabBar.addLocation, style: .standard, text: "Карта меток"),
                  delegate: delegat
              ),
             TabBarModule(
-                coordinator: makeCategoriesPointModule(),
+                coordinator: categoriesPointModule,
                 button: TabBarButton(icon: UIImage.TabBar.clipboard, style: .standard, text: "Списки"),
                 delegate: delegat
             ),
@@ -78,10 +81,11 @@ extension MainTabBarCoordinator {
                 delegate: delegat
             ),
             TabBarModule(
-                coordinator: makeProfileModule(),
+                coordinator: profileModule,
                 button: TabBarButton(icon: UIImage.TabBar.userAlt3, style: .standard, text: "Профиль"),
                 delegate: delegat
             ),
        ]
+        
     }
 }

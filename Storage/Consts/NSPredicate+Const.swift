@@ -41,7 +41,39 @@ public extension NSPredicate {
                 .init(format: "NOT \(uuidCategoryKeypath) == NULL", uuidCategoryKeypath)
             ])
         }
+        
+        public static var allIsUsed: NSPredicate {
+            let isUsedKeypath = "\(#keyPath(PPCategoriesMO.isUsed))"
+            return NSCompoundPredicate(andPredicateWithSubpredicates: [
+                .init(format: "\(isUsedKeypath) == TRUE", isUsedKeypath),
+                all
+            ])
+        }
+        
+        public static func byPoints(
+            in uuids: [String],
+            isUsed: Bool? = nil
+        ) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(PPCategoriesMO.uuidPoint))"
+            let isUsedKeypath = "\(#keyPath(PPCategoriesMO.isUsed))"
+            
+            var predicate: [NSPredicate] = [
+                .init(format: "\(uuidKeypath) IN %@", uuids),
+                all
+            ]
+            if let isUsed = isUsed {
+                let format = isUsed ? "\(isUsedKeypath) == TRUE" : "\(isUsedKeypath) == FALSE"
+                predicate.append(.init(format: format, isUsedKeypath))
+            }
+            
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicate)
+        }
 
+        
+        
+        
+        
+        
         public static func point(byUuidPoin uuidPoint: String,
                                  byUuidCategory uuidCategory: String) -> NSPredicate {
             let uuidPointKeypath = "\(#keyPath(PPCategoriesMO.uuidPoint))"
@@ -51,14 +83,41 @@ public extension NSPredicate {
                 .init(format: "\(uuidCategoryKeypath) CONTAINS[cd] %@", uuidCategory)
             ])
         }
-
-        public static func categories(byUuidPoin uuidPoint: String) -> NSPredicate {
-            let uuidPointKeypath = "\(#keyPath(PPCategoriesMO.uuidPoint))"
-            return NSCompoundPredicate(andPredicateWithSubpredicates: [
-                .init(format: "\(uuidPointKeypath) CONTAINS[cd] %@", uuidPoint)
-            ])
+        
+        public static func categories(
+            byUuidPoin uuid: String,
+            isUsed: Bool? = nil
+        ) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(PPCategoriesMO.uuidPoint))"
+            let isUsedKeypath = "\(#keyPath(PPCategoriesMO.isUsed))"
+            
+            var predicate: [NSPredicate] = [
+                .init(format: "\(uuidKeypath) CONTAINS[cd] %@", uuid)
+            ]
+            if let isUsed = isUsed {
+                let format = isUsed ? "\(isUsedKeypath) == TRUE" : "\(isUsedKeypath) == FALSE"
+                predicate.append(.init(format: format, isUsedKeypath))
+            }
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicate)
         }
-
+        
+        public static func points(
+            byUuidCategory uuid: String,
+            isUsed: Bool? = nil
+        ) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(PPCategoriesMO.uuidCategory))"
+            let isUsedKeypath = "\(#keyPath(PPCategoriesMO.isUsed))"
+            
+            var predicate: [NSPredicate] = [
+                .init(format: "\(uuidKeypath) CONTAINS[cd] %@", uuid)
+            ]
+            if let isUsed = isUsed {
+                let format = isUsed ? "\(isUsedKeypath) == TRUE" : "\(isUsedKeypath) == FALSE"
+                predicate.append(.init(format: format, isUsedKeypath))
+            }
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicate)
+        }
+        
     }
 
     enum CategoriesPoint {

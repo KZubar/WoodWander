@@ -94,5 +94,15 @@ public struct PlanPointDescription {
 }
 
 
+extension PlanPointDescription: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
+    }
+    
+    public static func == (lhs: PlanPointDescription, rhs: PlanPointDescription) -> Bool {
+        return lhs.uuid == rhs.uuid
+    }
+}
+
 
 

@@ -42,7 +42,7 @@ final class ChooseCategoriesPointVC: UIViewController {
         titleColor: .appWhite,
         backgroundColor: .appBlue
     ).withAction(self, #selector(saveDidTap), for: .touchUpInside)
-
+    
     private lazy var cancelButton: UIButton = {
         let bttn = UIButton()
         bttn.setIcon(

@@ -137,33 +137,32 @@ public class PPCategoriesStorage<DTO: DTODescriptionPPCategories> {
     //
     //    }
     
-    //+++
-//    public func delete(dto: (any DTODescriptionPPCategories),
-//                       completion: CompletionHandler? = nil) {
-//        let context = CoreDataService.shared.backgroundContext
-//        context.perform { [weak self] in
-//            guard
-//                let mo = self?.fetchMO(
-//                    predicate: .PPCategories.point(
-//                        byUuidPoin: dto.uuidPoint,
-//                        byUuidCategory: dto.uuidCategory
-//                    ),
-//                    context: context
-//                ).first
-//            else { return }
-//            
-//            context.delete(mo)
-//            CoreDataService.shared.saveContext(context: context,
-//                                               completion: completion)
-//        }
-//    }
-    
-    public func deleteAll(dtoPoint: (any DTODescriptionPlanPoint),
-                          completion: CompletionHandler? = nil) {
+    //+++ проверенно
+    public func deleteForCategory(dto: (any DTODescriptionCategoriesPoint),
+                                  completion: CompletionHandler? = nil) {
         let context = CoreDataService.shared.backgroundContext
         context.perform { [weak self] in
             let mos = self?.fetchMO(
-                predicate: .PPCategories.categories(byUuidPoin: dtoPoint.uuid),
+                predicate: .PPCategories.points(byUuidCategory: dto.uuid),
+                context: context
+            )
+            if (mos?.count ?? 0) > 0 {
+                mos?.forEach { context.delete($0) }
+                CoreDataService.shared.saveContext(context: context,
+                                                   completion: completion)
+            } else {
+                completion?(true)
+            }
+         }
+    }
+    
+    //+++ проверенно
+    public func deleteForPoint(dto: (any DTODescriptionPlanPoint),
+                               completion: CompletionHandler? = nil) {
+        let context = CoreDataService.shared.backgroundContext
+        context.perform { [weak self] in
+            let mos = self?.fetchMO(
+                predicate: .PPCategories.categories(byUuidPoin: dto.uuid),
                 context: context
             )
             if (mos?.count ?? 0) > 0 {

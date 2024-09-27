@@ -36,17 +36,15 @@ extension MapPlanPointsCoordinator: MapPlanPointsCoordinatorProtocol {
     }
     
     func startCreatePlanPointModule(
-        delegate: MapPlanPointsViewModelDelegat?,
         point: PlanPointDescription
     ) {
         openEditPlanPoint(point: point)
     }
     
     func startCategoriesPointModule(
-        delegate: MapPlanPointsViewModelDelegat?,
         point: PlanPointDescription
     ) {
-        openChooseCategoriesPoint(delegate: delegate, point: point)
+        openChooseCategoriesPoint(point: point)
     }
     
     private func openEditPlanPoint(point: PlanPointDescription) {
@@ -70,13 +68,11 @@ extension MapPlanPointsCoordinator: MapPlanPointsCoordinatorProtocol {
     }
 
     
-    private func openChooseCategoriesPoint(delegate: MapPlanPointsViewModelDelegat?,
-                                           point: PlanPointDescription) {
+    private func openChooseCategoriesPoint(point: PlanPointDescription) {
 
         let coordinator = ChooseCategoriesPointCoordinator(
             container: container,
-            point: point,
-            delegateVM: delegate
+            point: point
         )
         children.append(coordinator)
         let vc = coordinator.start()

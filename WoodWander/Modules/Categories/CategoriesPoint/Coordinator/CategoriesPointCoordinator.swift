@@ -18,7 +18,8 @@ final class CategoriesPointCoordinator: Coordinator {
     }
     
     override func start() -> UIViewController {
-        let vc = CategoriesPointAssembler.make(container: container, coordinator: self)
+        let vc = CategoriesPointAssembler.make(container: container, 
+                                               coordinator: self)
         rootVC = vc
         return vc
     }

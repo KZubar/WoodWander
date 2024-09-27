@@ -21,7 +21,7 @@ protocol CategoriesPointDataWorkerUseCase {
 final class CreateCategoriesPointVM: CreateCategoriesPointViewModelProtocol {
     
     private weak var coordinator: CreateCategoriesPointCoordinatorProtocol?
-    
+
     var name: String?
     var descr: String?
     

@@ -14,11 +14,61 @@ final class CircleView: UIView {
     private lazy var viewIn: UIView = UIView()
 
     
+    
     // MARK: - public
     
     var image: UIImage? {
         get { viewImg.image }
         set { viewImg.image = newValue }
+    }
+    var icon: String {
+        get { "" }
+        set {
+            if newValue.isEmpty { viewImg.image = nil; return }
+
+            // Пример строки со смайликом
+            let emojiString = newValue
+            
+            // Создание UILabel для рендеринга смайлика
+            let label = UILabel()
+            label.text = emojiString
+            label.font = UIFont.systemFont(ofSize: 100)
+            label.sizeToFit()
+            
+            // Создание UIImage из UILabel
+            UIGraphicsBeginImageContextWithOptions(label.bounds.size, false, 0)
+            label.layer.render(in: UIGraphicsGetCurrentContext()!)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            // Использование UIImage (например, установка в UIImageView)
+            if let image = image {
+                viewImg.image = image
+            } else {
+                print("Не удалось создать UIImage из строки")
+            }
+
+            
+            
+//            // Создание NSAttributedString из строки
+//            let attributedString = NSAttributedString(
+//                string: newValue,
+//                attributes: [.font: UIFont.systemFont(ofSize: 100)]
+//            )
+//            
+//            // Создание UIImage из NSAttributedString
+//            let size = attributedString.size()
+//            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+//            attributedString.draw(at: CGPoint.zero)
+//            let image = UIGraphicsGetImageFromCurrentImageContext()
+//            UIGraphicsEndImageContext()
+//            
+//            // Использование UIImage (например, установка в UIImageView)
+//            if let image = image {
+//                viewImg.image = image
+//            }
+
+        }
     }
     var backgroundColorIn: UIColor? {
         get { viewIn.backgroundColor }
@@ -28,7 +78,7 @@ final class CircleView: UIView {
         get { viewImg.backgroundColor }
         set { viewImg.backgroundColor = newValue }
     }
-    var contentModeIn: UIView.ContentMode {
+    var contentModeImg: UIView.ContentMode {
         get { viewImg.contentMode }
         set { viewImg.contentMode = newValue }
     }

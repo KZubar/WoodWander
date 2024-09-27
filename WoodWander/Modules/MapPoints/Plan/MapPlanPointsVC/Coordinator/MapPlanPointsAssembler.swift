@@ -18,17 +18,12 @@ final class MapPlanPointsAssembler {
         coordinator: MapPlanPointsCoordinatorProtocol
     ) -> UIViewController {
         
-        let alertService: AlertService = container.resolve()
         let mapService: MKMapViewService = container.resolve()
-        let frcServicePP = makeFRC()
-        let blrDataWorker: BlrDataWorker = container.resolve()
-        
+        let dataWorker: PlanPointDataWorker = container.resolve()
 
         let vm = MapPlanPointsVM(coordinator: coordinator,
-                                 frcServicePP: frcServicePP,
-                                 blrDataWorker: blrDataWorker,
-                                 mapService: mapService,
-                                 alertService: alertService)
+                                 dataWorker: dataWorker,
+                                 mapService: mapService)
         let vc = MapPlanPointsVC(viewModel: vm)
         return vc
     }

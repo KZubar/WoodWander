@@ -13,21 +13,17 @@ final class ChooseCategoriesPointCoordinator: Coordinator {
     private var rootVC: UIViewController?
     private let container: Container
     private var point: PlanPointDescription
-    private weak var delegateVM: MapPlanPointsViewModelDelegat?
 
     init(container: Container,
-         point: PlanPointDescription,
-         delegateVM: MapPlanPointsViewModelDelegat?) {
+         point: PlanPointDescription) {
         self.container = container
         self.point = point
-        self.delegateVM = delegateVM
     }
     
     override func start() -> UIViewController {
         let vc = ChooseCategoriesPointAssembler.make(container: container,
                                                      coordinator: self,
-                                                     point: self.point,
-                                                     delegateVM: self.delegateVM)
+                                                     point: self.point)
         rootVC = vc
         return vc
     }

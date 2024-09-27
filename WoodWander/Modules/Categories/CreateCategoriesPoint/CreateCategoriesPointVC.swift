@@ -16,6 +16,10 @@ final class CreateCategoriesPointVC: UIViewController {
         static let closeRound: FontType = UIImage.Categories.closeRound
     }
     
+    private enum Color {
+        static let defaultByPicker: UIColor = .defaultByMarker
+    }
+
     private lazy var contentView: UIView = .setContentView()
     private lazy var welcomLabel: UILabel = {
         let label: UILabel = .welcomTitle("Новый список")
@@ -83,17 +87,32 @@ final class CreateCategoriesPointVC: UIViewController {
         return view
     }()
     
+    private lazy var colorContentView: ColorPickerBigView = {
+        let view = ColorPickerBigView()
+        view.colorDefault = Color.defaultByPicker
+        view.colorUser = Color.defaultByPicker
+        view.delegat = self
+        return view
+    }()
+
 //TODO: - viewModel
     private var viewModel: CreateCategoriesPointViewModelProtocol
     
     private var iconUser: String = "" {
         didSet {
-            viewModel.icon = iconUser
             iconContentView.iconUser = iconUser
-            setupSaveButton(!(viewModel.name ?? "").isEmpty)
+            viewModel.icon = iconUser
+            //setupSaveButton(!(viewModel.icon ?? "").isEmpty)
         }
     }
     
+    private var colorUser: UIColor = Color.defaultByPicker {
+        didSet {
+            colorContentView.colorUser = colorUser
+            viewModel.color = colorUser.rgbToHex()
+        }
+    }
+
     init(viewModel: CreateCategoriesPointViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -112,13 +131,21 @@ final class CreateCategoriesPointVC: UIViewController {
         setupConstraints()
     }
     
-    private func bind() {
-        
+    private func bind() {       
         self.descrTextView.text = viewModel.descr
         self.nameTextView.text = viewModel.name
         
         self.iconUser = viewModel.icon ?? ""
-
+       
+        var color: UIColor = Color.defaultByPicker
+        if let colorString = viewModel.color {
+            if !colorString.isEmpty {
+                color = UIColor.hexToRGB(hexStr: colorString)
+            }
+        }
+        self.colorUser = color
+        
+        self.setupSaveButton(!(viewModel.name ?? "").isEmpty)
     }
     
     private func setupUI() {
@@ -132,6 +159,7 @@ final class CreateCategoriesPointVC: UIViewController {
         self.contentView.addSubview(self.infoView)
         
         self.infoView.addSubview(self.iconContentView)
+        self.infoView.addSubview(self.colorContentView)
         self.infoView.addSubview(self.nameTextView)
         self.infoView.addSubview(self.descrTextView)
     }
@@ -166,10 +194,14 @@ final class CreateCategoriesPointVC: UIViewController {
         //in infoView
         iconContentView.snp.makeConstraints { make in
             make.top.equalTo(-16)
-            make.centerX.equalTo(infoView.snp.centerX)
-            make.height.equalTo(160)
-            make.horizontalEdges.equalToSuperview()
+            make.right.equalTo(infoView.snp.centerX).inset(8.0)
+            make.height.width.equalTo(160)
         }
+        colorContentView.snp.makeConstraints { make in
+            make.top.equalTo(-16)
+            make.left.equalTo(infoView.snp.centerX).inset(8.0)
+            make.height.width.equalTo(160)
+         }
         nameTextView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(iconContentView.snp.bottom).inset(-16.0)
@@ -180,6 +212,15 @@ final class CreateCategoriesPointVC: UIViewController {
         }
     }
     
+    //включает или выключает кнопку (меняет цвет надписи)
+    private func setupSaveButton(_ isEnabled: Bool) {
+        if saveButton.isEnabled != isEnabled {
+            saveButton.isEnabled = isEnabled
+            let colorButton: UIColor = isEnabled ? .appBlack : .systemGray3
+            saveButton.setTitleColor(colorButton, for: .normal)
+        }
+    }
+
     @objc private func tapGestureDone() {
         view.endEditing(true)
     }
@@ -204,16 +245,28 @@ extension CreateCategoriesPointVC: EmojiPickerBigViewProtocol {
     }
 }
 
-extension CreateCategoriesPointVC: InputDataTextFieldPotocol {
- 
-    //включает или выключает кнопку (меняет цвет надписи)
-    private func setupSaveButton(_ isEnabled: Bool) {
-        if saveButton.isEnabled != isEnabled {
-            saveButton.isEnabled = isEnabled
-            let colorButton: UIColor = isEnabled ? .appBlack : .systemGray3
-            saveButton.setTitleColor(colorButton, for: .normal)
-        }
+extension CreateCategoriesPointVC: ColorPickerBigViewProtocol {
+    func clearColor() {
+         self.colorUser = Color.defaultByPicker
     }
+    func openPickerColor(selectedColor: UIColor) {
+        let colorPicker = UIColorPickerViewController()
+        colorPicker.title = "Выберите цвет метки"
+        colorPicker.delegate = self
+        colorPicker.modalPresentationStyle = .popover
+        colorPicker.selectedColor = selectedColor
+        self.present(colorPicker, animated: true, completion: nil)
+    }
+}
+
+//UIColorPicker сообщает о выборе цвета
+extension CreateCategoriesPointVC: UIColorPickerViewControllerDelegate {
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        self.colorUser = viewController.selectedColor
+    }
+}
+
+extension CreateCategoriesPointVC: InputDataTextFieldPotocol {
 
     //Сообщает делегату об изменении выделения текста в указанном текстовом поле.
     func inputDataTextFieldDidChangeSelection(_ inputDataTextField: InputDataTextField) {
@@ -241,5 +294,4 @@ extension CreateCategoriesPointVC: InputDataTextFieldPotocol {
     }
     
 }
-
 

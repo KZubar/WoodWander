@@ -88,7 +88,7 @@ final class NewPlaceDescriptionView: UIView {
         view.cornerRadius = 5.0
         view.delegat = self
         view.image = UIImage(systemName: "doc.badge.plus")
-        view.title = "Добавить в категорию"
+        view.title = "Добавить в список"
         return view
     }()
     

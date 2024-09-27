@@ -15,8 +15,7 @@ final class ChooseCategoriesPointAssembler {
     static func make(
         container: Container,
         coordinator: ChooseCategoriesPointCoordinatorProtocol,
-        point: PlanPointDescription,
-        delegateVM: MapPlanPointsViewModelDelegat?
+        point: PlanPointDescription
     ) -> UIViewController {
         
         let frcService = makeFRC()
@@ -28,7 +27,6 @@ final class ChooseCategoriesPointAssembler {
 
         let vm = ChooseCategoriesPointVM(frcService: frcService,
                                          point: point,
-                                         delegateVM: delegateVM,
                                          adapter: adapter,
                                          coordinator: coordinator,
                                          dataWorker: dataWorker)

@@ -11,20 +11,21 @@ import SnapKit
 
 final class LocationPinView: MKAnnotationView {
     
+    private enum Color {
+        static let defaultByMarker: UIColor = .defaultByMarker
+    }
+
     private var param: LocationPinParameters = .big
+    
+    private var dto: PlanPointDescription?
     
     private lazy var pointView: CircleView = CircleView()
 
     override var isSelected: Bool {
         didSet {
-            if isSelected {
-                UIView.animate(withDuration: 0.10) {
-                    self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-                }
-            } else {
-                UIView.animate(withDuration: 0.10) {
-                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                }
+            let scale: CGFloat = isSelected ? 1.5 : 1.0
+            UIView.animate(withDuration: 0.15) {
+                self.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
         }
     }
@@ -56,7 +57,8 @@ final class LocationPinView: MKAnnotationView {
     func setupIcon() {
         if let marker = annotation as? LocationPin {
             self.param = marker.param
-            
+            //self.param = .big
+
             pointView.frame = .init(origin: .zero, size: param.sizeRenderer)
             
             
@@ -64,11 +66,11 @@ final class LocationPinView: MKAnnotationView {
             pointView.cornerRadiusIn = (param.sizeRenderer.width-2*param.edgeOffset) / 2
             pointView.cornerRadiusImg = (param.sizeRenderer.width-2*param.edgeOffset) / 2
             
-            var colorPin: UIColor
+            var colorPin: UIColor?
             if marker.isTapPin {
                 colorPin = .gradient0
             } else {
-                colorPin = .appBlue
+                colorPin = Color.defaultByMarker
                 if let hex = marker.color {
                     if !hex.isEmpty {
                         colorPin = UIColor.hexToRGB(hexStr: hex)
@@ -76,25 +78,56 @@ final class LocationPinView: MKAnnotationView {
                 }
             }
             
-            pointView.tintColorImg = .appWhite
+            //pointView.tintColorImg = .clear
             pointView.backgroundColor = .appWhite
-            pointView.backgroundColorIn = colorPin
+            pointView.backgroundColorIn = .appWhite
             pointView.backgroundColorImg = colorPin
+            
+            if self.param == .big {
+                if let icon = marker.icon {
+                    if !icon.isEmpty {
+                        pointView.backgroundColorImg = .clear
+                        pointView.backgroundColorIn = colorPin
+                    }
+               }
+            } else {
+                pointView.backgroundColorIn = colorPin
+            }
+
+
+//            if let icon = marker.icon {
+//                pointView.backgroundColorImg = icon.isEmpty ? colorPin : .clear
+//            } else {
+//                pointView.backgroundColorImg = self.param == .big ? .clear : colorPin
+//            }
+                
             
             pointView.isHiddenIn = !param.isHiddenImg
             pointView.isHiddenImage = param.isHiddenImg
             
-            var imagePin: UIImage? = nil
+            pointView.contentModeImg = .scaleToFill
+            
+//            var imagePin: UIImage?
             //pointView.image = .Map.mappin
-            if marker.isTapPin {
-                imagePin = UIImage(systemName: "star")
-            } else {
-                if let nameImage = marker.icon {
-                    imagePin = UIImage(systemName: nameImage)
-                }
-            }        
-            imagePin = UIImage(named: "avto_001")
-            pointView.image = imagePin
+//            if marker.isTapPin {
+//                imagePin = UIImage(systemName: "star")
+//            } else {
+//                if let nameImage = marker.icon {
+//                    if !nameImage.isEmpty {
+//                        imagePin = UIImage(
+//                    }
+//                }
+//            }        
+//            imagePin = UIImage(icon: .googleMaterialDesign(.formatListBulleted),
+//                               size: CGSize(width: 20.0, height: 20.0))
+            
+            
+//            pointView.image = imagePin
+            
+            if self.param == .big {
+                pointView.icon = marker.icon ?? ""
+            }
+            
             
             setupFrame()
             setupConstraints()

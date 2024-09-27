@@ -15,6 +15,7 @@
 import UIKit
 import Storage
 
+
 protocol CategoriesPointAdapterProtocol: AnyObject {
     func reloadData(_ dtoList: [any DTODescriptionCategoriesPoint])
     func makeTableView() -> UITableView
@@ -48,7 +49,7 @@ final class CategoriesPointVM: CategoriesPointViewModelProtocol {
     private var frcService: CategoriesPointFRCServiceCategoriesPointUseCase
     private var dataWorker: CategoriesPointWorkerUseCase
     private weak var coordinator: CategoriesPointCoordinatorProtocol?
-    
+
     private var selectedDTO: (any DTODescriptionCategoriesPoint)?
     private var selectedIndexPath: IndexPath?
 
@@ -76,10 +77,23 @@ final class CategoriesPointVM: CategoriesPointViewModelProtocol {
         self.didChangeMenuAction = { [weak self] action in
             switch action {
             case .delete:
+                
                 if let dto = self?.selectedDTO {
-                    self?.dataWorker.deleteByUser(dto: dto, completion: nil)
+                    self?.dataWorker.deleteByUser(dto: dto) { [weak self] isSuccess in
+                        guard isSuccess else { return }
+
+                        if isSuccess {
+                            DispatchQueue.main.async {
+                                NotificationCenter.default.post(
+                                    name: .updateCategory,
+                                    object: nil
+                                )
+                            }
+                        }
+                    }
                 }
                 return
+                
             case .edit:
                 if let dto = self?.selectedDTO {
                     self?.coordinator?.openEditCategoriesPoint(dto: dto)
@@ -117,4 +131,9 @@ final class CategoriesPointVM: CategoriesPointViewModelProtocol {
     func openEditCategoriesPoint() {
         self.coordinator?.openEditCategoriesPoint(dto: nil)
     }
+}
+
+extension Notification.Name {
+    static let updateCategory = Notification.Name("updateCategory")
+    static let updatePoint = Notification.Name("updatePoint")
 }

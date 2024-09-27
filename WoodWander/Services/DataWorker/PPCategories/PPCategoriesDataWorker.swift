@@ -34,7 +34,7 @@ final class PPCategoriesDataWorker {
         return storage.fetchDTO(predicate: predicate, sortDescriptors: sortDescriptors)
     }
 
-    //MARK:
+    //MARK: -
     public func create(dtoPoint: (any DTODescriptionPlanPoint),
                        dtosPPCategories: [any DTODescriptionPPCategories],
                        completion: CompletionHandler? = nil
@@ -44,7 +44,7 @@ final class PPCategoriesDataWorker {
             guard isSuccess else { completion?(false); return }
 
             //всегда удаляем dtosPPCategories
-            storage.deleteAll(dtoPoint: dtoPoint) { isSuccess in
+            storage.deleteForPoint(dto: dtoPoint) { isSuccess in
                 guard isSuccess else { completion?(false); return }
                 
                 //потом создаем dtosPPCategories

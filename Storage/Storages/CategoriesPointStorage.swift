@@ -12,26 +12,21 @@ public enum CategoriesPointPredefined {
     
     case favorites
     
-    case marked
-
     var uuid: String {
         switch self {
         case .favorites: return "00000000-0000-0000-0000-000000000001"
-        case .marked: return "00000000-0000-0000-0000-000000000002"
         }
     }
 
     var name: String {
         switch self {
         case .favorites: return "Избранное"
-        case .marked: return "Отмеченное"
         }
     }
 
     var icon: String {
         switch self {
         case .favorites: return "❤️"
-        case .marked: return "🩵"
         }
     }
     
@@ -110,15 +105,6 @@ public class CategoriesPointStorage<DTO: DTODescriptionCategoriesPoint> {
                                                predefined: true,
                                                uuid: fa.uuid)
         
-        let ma = CategoriesPointPredefined.marked
-        let dtoMarked = CategoriesPointDTO(color: "",
-                                           date: Date(),
-                                           descr: "",
-                                           icon: ma.icon,
-                                           isDisabled: false,
-                                           name: ma.name,
-                                           predefined: true,
-                                           uuid: ma.uuid)
         
         let context = CoreDataService.shared.backgroundContext
         if fetchMO(
@@ -126,12 +112,6 @@ public class CategoriesPointStorage<DTO: DTODescriptionCategoriesPoint> {
             context: context
         ).isEmpty {
             create(dto: dtoFavourites)
-        }
-        if fetchMO(
-            predicate: .CategoriesPoint.category(byUuid: dtoMarked.uuid),
-            context: context
-        ).isEmpty {
-            create(dto: dtoMarked)
         }
     }
     

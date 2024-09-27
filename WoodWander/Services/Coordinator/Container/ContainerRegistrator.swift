@@ -32,16 +32,22 @@ final class ContainerRegistrator {
         //worker storage
         container.register({
             let storage: CategoriesPointStorage<CategoriesPointDTO> = container.resolve()
+            let storagePPCategories: PPCategoriesStorage<PPCategoriesDTO> = container.resolve()
+            let storagePlanPoint: PlanPointStorage<PlanPointDTO> = container.resolve()
             let workerService: CategoriesPointDataWorker = CategoriesPointDataWorker(
-                storage: storage
+                storage: storage,
+                storagePPCategories: storagePPCategories,
+                storagePlanPoint: storagePlanPoint
             )
             return workerService
         })
         container.register({
             let storage: PlanPointStorage<PlanPointDTO> = container.resolve()
+            let storagePPCategories: PPCategoriesStorage<PPCategoriesDTO> = container.resolve()
             let workerService: PlanPointDataWorker = PlanPointDataWorker(
-                storage: storage
-            )
+                storage: storage,
+                storagePPCategories: storagePPCategories
+           )
             return workerService
         })
         container.register({
@@ -56,7 +62,7 @@ final class ContainerRegistrator {
 
         
         
-        
+
         
         
         
@@ -76,8 +82,10 @@ final class ContainerRegistrator {
         //FIXME: - почему возвращает одинаковый тип тут и выше "return blrDataWorkerService"
         container.register({
             let storage: PlanPointStorage<PlanPointDTO> = container.resolve()
+            let storagePPCategories: PPCategoriesStorage<PPCategoriesDTO> = container.resolve()
             let blrDataWorkerService: PlanPointDataWorker = PlanPointDataWorker(
-                storage: storage
+                storage: storage,
+                storagePPCategories: storagePPCategories
             )
             return blrDataWorkerService
         })

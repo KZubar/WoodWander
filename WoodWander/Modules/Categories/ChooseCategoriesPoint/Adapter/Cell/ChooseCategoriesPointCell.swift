@@ -116,7 +116,7 @@ final class ChooseCategoriesPointCell: UITableViewCell {
                 textViewHeightConstraint?.update(offset: 0)
             }
             
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.1) {
                 self.contentView.layoutIfNeeded()
             }
             
@@ -254,7 +254,7 @@ extension ChooseCategoriesPointCell: UITextViewDelegate {
         
         adjustTextViewHeight()
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.1) {
             self.contentView.layoutIfNeeded()
         }
 
