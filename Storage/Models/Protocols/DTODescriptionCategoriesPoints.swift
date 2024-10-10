@@ -18,7 +18,6 @@ public protocol DTODescriptionCategoriesPoint {
     var icon: String?  {get set}
     var isDisabled: Bool  {get set}
     var name: String?  {get set}
-    var predefined: Bool  {get set}
     var uuid: String  {get set}
     
     static func fromMO(_ mo: MO) -> Self?

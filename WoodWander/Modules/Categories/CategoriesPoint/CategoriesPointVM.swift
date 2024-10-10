@@ -39,8 +39,6 @@ protocol CategoriesPointFRCServiceCategoriesPointUseCase {
 protocol CategoriesPointWorkerUseCase {
     typealias CompletionHandler = (Bool) -> Void
     func deleteByUser(dto: (any DTODescriptionCategoriesPoint), completion: CompletionHandler?)
-    func createPredefinedDTO()
-    
 }
 
 final class CategoriesPointVM: CategoriesPointViewModelProtocol {
@@ -114,9 +112,6 @@ final class CategoriesPointVM: CategoriesPointViewModelProtocol {
     func viewDidLoad() {
         frcService.startHandle()
         let dtos = frcService.fetcherDTOs
-        if dtos.isEmpty {
-            dataWorker.createPredefinedDTO()
-        }
         adapter.reloadData(dtos)
     }
     

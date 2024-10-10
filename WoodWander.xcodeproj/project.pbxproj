@@ -106,11 +106,13 @@
 		D336B88B2C58BC99007EB986 /* CreatePlanPointCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336B88A2C58BC99007EB986 /* CreatePlanPointCoordinator.swift */; };
 		D336B88E2C58C2BA007EB986 /* PlanPointDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336B88D2C58C2BA007EB986 /* PlanPointDataWorker.swift */; };
 		D336B8902C58C37D007EB986 /* PointDataWorker+PlanPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336B88F2C58C37D007EB986 /* PointDataWorker+PlanPoint.swift */; };
+		D33CD8372CA95D4200C33BCE /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33CD8362CA95D4200C33BCE /* MyVC.swift */; };
 		D363A9E62C675BBB00CA49CF /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363A9E52C675BBB00CA49CF /* CircleView.swift */; };
 		D3672C5A2C3172C100AF8C6A /* NewPlaceDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3672C592C3172C100AF8C6A /* NewPlaceDescriptionView.swift */; };
 		D3672C5D2C31962E00AF8C6A /* MKMapViewService+MapPlanPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3672C5C2C31962E00AF8C6A /* MKMapViewService+MapPlanPoint.swift */; };
 		D3672C602C3342E800AF8C6A /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3672C5F2C3342E800AF8C6A /* LocationHelper.swift */; };
 		D3672C672C336B5800AF8C6A /* LocationHelper+MapPlanPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3672C662C336B5800AF8C6A /* LocationHelper+MapPlanPoints.swift */; };
+		D36A1BF82CB070790047E9C5 /* ChooseCategoriesPointVC_copy2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36A1BF72CB070790047E9C5 /* ChooseCategoriesPointVC_copy2.swift */; };
 		D373EF7F2C84D1360037CD3D /* PPCategoriesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373EF7D2C84D1360037CD3D /* PPCategoriesMO+CoreDataClass.swift */; };
 		D373EF802C84D1360037CD3D /* PPCategoriesMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373EF7E2C84D1360037CD3D /* PPCategoriesMO+CoreDataProperties.swift */; };
 		D373EF822C84D35A0037CD3D /* DTODescriptionPPCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373EF812C84D35A0037CD3D /* DTODescriptionPPCategories.swift */; };
@@ -119,6 +121,33 @@
 		D373EF882C84D6CE0037CD3D /* FRCServicePPCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373EF872C84D6CE0037CD3D /* FRCServicePPCategories.swift */; };
 		D373EF8C2C85137B0037CD3D /* PPCategoriesDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373EF8B2C85137B0037CD3D /* PPCategoriesDataWorker.swift */; };
 		D373EF8E2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D373EF8D2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift */; };
+		D38A885C2CA98A6B00C3CE86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D38A885A2CA98A6B00C3CE86 /* Localizable.strings */; };
+		D38A88622CABECAF00C3CE86 /* SourcePointMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88612CABECAF00C3CE86 /* SourcePointMO+CoreDataProperties.swift */; };
+		D38A88632CABECAF00C3CE86 /* PPSourceMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A885F2CABECAF00C3CE86 /* PPSourceMO+CoreDataProperties.swift */; };
+		D38A88642CABECAF00C3CE86 /* SourcePointMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88602CABECAF00C3CE86 /* SourcePointMO+CoreDataClass.swift */; };
+		D38A88652CABECAF00C3CE86 /* PPSourceMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A885E2CABECAF00C3CE86 /* PPSourceMO+CoreDataClass.swift */; };
+		D38A88672CAC70BD00C3CE86 /* DTODescriptionSourcePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88662CAC70BD00C3CE86 /* DTODescriptionSourcePoint.swift */; };
+		D38A88692CAC712700C3CE86 /* SourcePointDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88682CAC712700C3CE86 /* SourcePointDTO.swift */; };
+		D38A886B2CAC73E100C3CE86 /* DTODescriptionPPSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A886A2CAC73E100C3CE86 /* DTODescriptionPPSource.swift */; };
+		D38A886D2CAC745D00C3CE86 /* PPSourceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A886C2CAC745D00C3CE86 /* PPSourceDTO.swift */; };
+		D38A886F2CAC8A8900C3CE86 /* FRCServiceSourcePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A886E2CAC8A8900C3CE86 /* FRCServiceSourcePoint.swift */; };
+		D38A88712CAC8AA400C3CE86 /* FRCServicePPSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88702CAC8AA400C3CE86 /* FRCServicePPSource.swift */; };
+		D38A88732CAC93A600C3CE86 /* SourcePointStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88722CAC93A600C3CE86 /* SourcePointStorage.swift */; };
+		D38A88752CAC954F00C3CE86 /* PPSourceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88742CAC954F00C3CE86 /* PPSourceStorage.swift */; };
+		D38A88842CAEDCC200C3CE86 /* SourcePointCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88832CAEDCC200C3CE86 /* SourcePointCollectionView.swift */; };
+		D38A88862CAEDCD000C3CE86 /* SourcePointCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88852CAEDCD000C3CE86 /* SourcePointCollectionCell.swift */; };
+		D38A88882CAEE03B00C3CE86 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88872CAEE03B00C3CE86 /* String+Size.swift */; };
+		D38A888B2CAFCFC400C3CE86 /* ForestPointCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A888A2CAFCFC400C3CE86 /* ForestPointCollectionView.swift */; };
+		D38A888D2CAFCFD400C3CE86 /* ForestPointCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A888C2CAFCFD300C3CE86 /* ForestPointCollectionCell.swift */; };
+		D38A88932CB030A500C3CE86 /* ChooseInfoPointVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88922CB030A500C3CE86 /* ChooseInfoPointVM.swift */; };
+		D38A88952CB030B800C3CE86 /* ChooseInfoPointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88942CB030B800C3CE86 /* ChooseInfoPointVC.swift */; };
+		D38A88972CB030D800C3CE86 /* ChooseInfoPointViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88962CB030D800C3CE86 /* ChooseInfoPointViewModelProtocol.swift */; };
+		D38A88992CB0313000C3CE86 /* ChooseInfoPointAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88982CB0313000C3CE86 /* ChooseInfoPointAssembler.swift */; };
+		D38A889B2CB0314E00C3CE86 /* ChooseInfoPointCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A889A2CB0314E00C3CE86 /* ChooseInfoPointCoordinator.swift */; };
+		D38A889F2CB031E100C3CE86 /* ChooseInfoPointHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A889E2CB031E100C3CE86 /* ChooseInfoPointHeadView.swift */; };
+		D38A88A12CB031F700C3CE86 /* ChooseInfoPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88A02CB031F700C3CE86 /* ChooseInfoPointCell.swift */; };
+		D38A88A32CB0320900C3CE86 /* ChooseInfoPointAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88A22CB0320900C3CE86 /* ChooseInfoPointAdapter.swift */; };
+		D38A88A52CB055D200C3CE86 /* ChooseCategoriesPointVC_copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A88A42CB055CB00C3CE86 /* ChooseCategoriesPointVC_copy.swift */; };
 		D39CF1C42C57608300C80B1D /* CreatePlanPointVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1C32C57608300C80B1D /* CreatePlanPointVC.swift */; };
 		D39CF1C62C57C3BF00C80B1D /* NewPlaceDescriptionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1C52C57C3BF00C80B1D /* NewPlaceDescriptionButtonView.swift */; };
 		D39CF1D82C57EA9C00C80B1D /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CF1D72C57EA9C00C80B1D /* UILabel+Styles.swift */; };
@@ -151,7 +180,6 @@
 		D3E985212C763FD60049AA2B /* CategoriesPointMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9851F2C763FD60049AA2B /* CategoriesPointMO+CoreDataProperties.swift */; };
 		D3E985232C7644720049AA2B /* CategoriesPointDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985222C7644720049AA2B /* CategoriesPointDTO.swift */; };
 		D3E985252C764FF20049AA2B /* FRCServiceCategoriesPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985242C764FF20049AA2B /* FRCServiceCategoriesPoint.swift */; };
-		D3E985292C7758090049AA2B /* CategoriesPointSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985282C7758090049AA2B /* CategoriesPointSections.swift */; };
 		D3E9852B2C7759EF0049AA2B /* CategoriesPointHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9852A2C7759EF0049AA2B /* CategoriesPointHeadView.swift */; };
 		D3E9852D2C775A790049AA2B /* CategoriesPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9852C2C775A790049AA2B /* CategoriesPointCell.swift */; };
 		D3E9852F2C776A7A0049AA2B /* CategoriesPointAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9852E2C776A7A0049AA2B /* CategoriesPointAssembler.swift */; };
@@ -177,7 +205,6 @@
 		D3E985722C7D617B0049AA2B /* ChooseCategoriesPointCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985712C7D617B0049AA2B /* ChooseCategoriesPointCoordinator.swift */; };
 		D3E985742C7D61C90049AA2B /* FRCServiceCategoriesPoint+ChooseCategoriesPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985732C7D61C90049AA2B /* FRCServiceCategoriesPoint+ChooseCategoriesPoint.swift */; };
 		D3E985792C7D68880049AA2B /* ChooseCategoriesPointAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985782C7D68880049AA2B /* ChooseCategoriesPointAdapter.swift */; };
-		D3E9857B2C7D68C30049AA2B /* ChooseCategoriesPointSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9857A2C7D68C30049AA2B /* ChooseCategoriesPointSections.swift */; };
 		D3E9857D2C7D69230049AA2B /* ChooseCategoriesPointHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9857C2C7D69230049AA2B /* ChooseCategoriesPointHeadView.swift */; };
 		D3E9857F2C7D69740049AA2B /* ChooseCategoriesPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9857E2C7D69740049AA2B /* ChooseCategoriesPointCell.swift */; };
 		D3E9858B2C7F11400049AA2B /* MCEmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D3E9858A2C7F11400049AA2B /* MCEmojiPicker */; };
@@ -185,7 +212,6 @@
 		D3E985912C7F82CF0049AA2B /* CategoriesPointDataWorker+CategoriesPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985902C7F82CF0049AA2B /* CategoriesPointDataWorker+CategoriesPoint.swift */; };
 		D3E985952C7FA8E90049AA2B /* UIAlertAction+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985942C7FA8E90049AA2B /* UIAlertAction+Color.swift */; };
 		D3E985A02C80FEF20049AA2B /* IconViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E9859E2C80FEF20049AA2B /* IconViewVC.swift */; };
-		D3E985A22C8233300049AA2B /* CategoriesPointPredefined.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985A12C8233300049AA2B /* CategoriesPointPredefined.swift */; };
 		D3E985A42C8233990049AA2B /* CategoriesPointMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E985A32C8233990049AA2B /* CategoriesPointMenuAction.swift */; };
 		D3EE262A2C34433D00C7A698 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE26292C34433D00C7A698 /* String.swift */; };
 		D3EE262C2C34440000C7A698 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EE262B2C34440000C7A698 /* CLLocationCoordinate2D.swift */; };
@@ -331,11 +357,13 @@
 		D336B88A2C58BC99007EB986 /* CreatePlanPointCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlanPointCoordinator.swift; sourceTree = "<group>"; };
 		D336B88D2C58C2BA007EB986 /* PlanPointDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanPointDataWorker.swift; sourceTree = "<group>"; };
 		D336B88F2C58C37D007EB986 /* PointDataWorker+PlanPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PointDataWorker+PlanPoint.swift"; sourceTree = "<group>"; };
+		D33CD8362CA95D4200C33BCE /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		D363A9E52C675BBB00CA49CF /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		D3672C592C3172C100AF8C6A /* NewPlaceDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceDescriptionView.swift; sourceTree = "<group>"; };
 		D3672C5C2C31962E00AF8C6A /* MKMapViewService+MapPlanPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapViewService+MapPlanPoint.swift"; sourceTree = "<group>"; };
 		D3672C5F2C3342E800AF8C6A /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		D3672C662C336B5800AF8C6A /* LocationHelper+MapPlanPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationHelper+MapPlanPoints.swift"; sourceTree = "<group>"; };
+		D36A1BF72CB070790047E9C5 /* ChooseCategoriesPointVC_copy2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoriesPointVC_copy2.swift; sourceTree = "<group>"; };
 		D373EF7D2C84D1360037CD3D /* PPCategoriesMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPCategoriesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D373EF7E2C84D1360037CD3D /* PPCategoriesMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPCategoriesMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D373EF812C84D35A0037CD3D /* DTODescriptionPPCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescriptionPPCategories.swift; sourceTree = "<group>"; };
@@ -344,6 +372,36 @@
 		D373EF872C84D6CE0037CD3D /* FRCServicePPCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCServicePPCategories.swift; sourceTree = "<group>"; };
 		D373EF8B2C85137B0037CD3D /* PPCategoriesDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCategoriesDataWorker.swift; sourceTree = "<group>"; };
 		D373EF8D2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPCategoriesDataWorker+CreateCategoriesPoint.swift"; sourceTree = "<group>"; };
+		D38A88582CA9892C00C3CE86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D38A88592CA989D600C3CE86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D38A885B2CA98A6B00C3CE86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D38A885D2CA98A8F00C3CE86 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D38A885E2CABECAF00C3CE86 /* PPSourceMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPSourceMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D38A885F2CABECAF00C3CE86 /* PPSourceMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PPSourceMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D38A88602CABECAF00C3CE86 /* SourcePointMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SourcePointMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D38A88612CABECAF00C3CE86 /* SourcePointMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SourcePointMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D38A88662CAC70BD00C3CE86 /* DTODescriptionSourcePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescriptionSourcePoint.swift; sourceTree = "<group>"; };
+		D38A88682CAC712700C3CE86 /* SourcePointDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePointDTO.swift; sourceTree = "<group>"; };
+		D38A886A2CAC73E100C3CE86 /* DTODescriptionPPSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTODescriptionPPSource.swift; sourceTree = "<group>"; };
+		D38A886C2CAC745D00C3CE86 /* PPSourceDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSourceDTO.swift; sourceTree = "<group>"; };
+		D38A886E2CAC8A8900C3CE86 /* FRCServiceSourcePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCServiceSourcePoint.swift; sourceTree = "<group>"; };
+		D38A88702CAC8AA400C3CE86 /* FRCServicePPSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCServicePPSource.swift; sourceTree = "<group>"; };
+		D38A88722CAC93A600C3CE86 /* SourcePointStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePointStorage.swift; sourceTree = "<group>"; };
+		D38A88742CAC954F00C3CE86 /* PPSourceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSourceStorage.swift; sourceTree = "<group>"; };
+		D38A88832CAEDCC200C3CE86 /* SourcePointCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePointCollectionView.swift; sourceTree = "<group>"; };
+		D38A88852CAEDCD000C3CE86 /* SourcePointCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePointCollectionCell.swift; sourceTree = "<group>"; };
+		D38A88872CAEE03B00C3CE86 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		D38A888A2CAFCFC400C3CE86 /* ForestPointCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestPointCollectionView.swift; sourceTree = "<group>"; };
+		D38A888C2CAFCFD300C3CE86 /* ForestPointCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForestPointCollectionCell.swift; sourceTree = "<group>"; };
+		D38A88922CB030A500C3CE86 /* ChooseInfoPointVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointVM.swift; sourceTree = "<group>"; };
+		D38A88942CB030B800C3CE86 /* ChooseInfoPointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointVC.swift; sourceTree = "<group>"; };
+		D38A88962CB030D800C3CE86 /* ChooseInfoPointViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointViewModelProtocol.swift; sourceTree = "<group>"; };
+		D38A88982CB0313000C3CE86 /* ChooseInfoPointAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointAssembler.swift; sourceTree = "<group>"; };
+		D38A889A2CB0314E00C3CE86 /* ChooseInfoPointCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointCoordinator.swift; sourceTree = "<group>"; };
+		D38A889E2CB031E100C3CE86 /* ChooseInfoPointHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointHeadView.swift; sourceTree = "<group>"; };
+		D38A88A02CB031F700C3CE86 /* ChooseInfoPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointCell.swift; sourceTree = "<group>"; };
+		D38A88A22CB0320900C3CE86 /* ChooseInfoPointAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseInfoPointAdapter.swift; sourceTree = "<group>"; };
+		D38A88A42CB055CB00C3CE86 /* ChooseCategoriesPointVC_copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoriesPointVC_copy.swift; sourceTree = "<group>"; };
 		D39CF1C32C57608300C80B1D /* CreatePlanPointVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlanPointVC.swift; sourceTree = "<group>"; };
 		D39CF1C52C57C3BF00C80B1D /* NewPlaceDescriptionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceDescriptionButtonView.swift; sourceTree = "<group>"; };
 		D39CF1D72C57EA9C00C80B1D /* UILabel+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
@@ -359,6 +417,7 @@
 		D3B4E2812C397DBE0031EF14 /* BlrCoordinateStorage+Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlrCoordinateStorage+Delete.swift"; sourceTree = "<group>"; };
 		D3B4E2862C3A92AF0031EF14 /* BlrDataSourseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlrDataSourseService.swift; sourceTree = "<group>"; };
 		D3B4E28A2C3B1D0D0031EF14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D3B8E80C2CB7ADE300D22885 /* Untitled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Untitled.swift; sourceTree = "<group>"; };
 		D3B9F4AA2C5FD50B0039CD13 /* MKMapView+Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Consts.swift"; sourceTree = "<group>"; };
 		D3B9F4AC2C60B2730039CD13 /* LocationPinViewParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPinViewParameters.swift; sourceTree = "<group>"; };
 		D3E58D552C8DCCD100A07EC9 /* MapPlanPointsViewModel+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapPlanPointsViewModel+Protocol.swift"; sourceTree = "<group>"; };
@@ -376,7 +435,6 @@
 		D3E9851F2C763FD60049AA2B /* CategoriesPointMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesPointMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3E985222C7644720049AA2B /* CategoriesPointDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointDTO.swift; sourceTree = "<group>"; };
 		D3E985242C764FF20049AA2B /* FRCServiceCategoriesPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRCServiceCategoriesPoint.swift; sourceTree = "<group>"; };
-		D3E985282C7758090049AA2B /* CategoriesPointSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointSections.swift; sourceTree = "<group>"; };
 		D3E9852A2C7759EF0049AA2B /* CategoriesPointHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointHeadView.swift; sourceTree = "<group>"; };
 		D3E9852C2C775A790049AA2B /* CategoriesPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointCell.swift; sourceTree = "<group>"; };
 		D3E9852E2C776A7A0049AA2B /* CategoriesPointAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointAssembler.swift; sourceTree = "<group>"; };
@@ -399,14 +457,12 @@
 		D3E985712C7D617B0049AA2B /* ChooseCategoriesPointCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoriesPointCoordinator.swift; sourceTree = "<group>"; };
 		D3E985732C7D61C90049AA2B /* FRCServiceCategoriesPoint+ChooseCategoriesPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FRCServiceCategoriesPoint+ChooseCategoriesPoint.swift"; sourceTree = "<group>"; };
 		D3E985782C7D68880049AA2B /* ChooseCategoriesPointAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoriesPointAdapter.swift; sourceTree = "<group>"; };
-		D3E9857A2C7D68C30049AA2B /* ChooseCategoriesPointSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoriesPointSections.swift; sourceTree = "<group>"; };
 		D3E9857C2C7D69230049AA2B /* ChooseCategoriesPointHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoriesPointHeadView.swift; sourceTree = "<group>"; };
 		D3E9857E2C7D69740049AA2B /* ChooseCategoriesPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoriesPointCell.swift; sourceTree = "<group>"; };
 		D3E9858C2C7F24E60049AA2B /* EmojiPickerBigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPickerBigView.swift; sourceTree = "<group>"; };
 		D3E985902C7F82CF0049AA2B /* CategoriesPointDataWorker+CategoriesPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesPointDataWorker+CategoriesPoint.swift"; sourceTree = "<group>"; };
 		D3E985942C7FA8E90049AA2B /* UIAlertAction+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Color.swift"; sourceTree = "<group>"; };
 		D3E9859E2C80FEF20049AA2B /* IconViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewVC.swift; sourceTree = "<group>"; };
-		D3E985A12C8233300049AA2B /* CategoriesPointPredefined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointPredefined.swift; sourceTree = "<group>"; };
 		D3E985A32C8233990049AA2B /* CategoriesPointMenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPointMenuAction.swift; sourceTree = "<group>"; };
 		D3EE26292C34433D00C7A698 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D3EE262B2C34440000C7A698 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
@@ -577,6 +633,7 @@
 		D332115E2C2ADB5000227928 = {
 			isa = PBXGroup;
 			children = (
+				D3B8E80C2CB7ADE300D22885 /* Untitled.swift */,
 				D33211692C2ADB5000227928 /* WoodWander */,
 				D33211EC2C2C2DD300227928 /* Storage */,
 				D31517502C36A69B00FE34EB /* StorageBLR */,
@@ -608,6 +665,7 @@
 				D332118C2C2B144000227928 /* Services */,
 				D33211D42C2B2B6800227928 /* Styles */,
 				D33211B32C2B239600227928 /* Utils */,
+				D38A885A2CA98A6B00C3CE86 /* Localizable.strings */,
 			);
 			path = WoodWander;
 			sourceTree = "<group>";
@@ -699,6 +757,7 @@
 		D33211992C2B18DD00227928 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D38A888E2CB0301B00C3CE86 /* ChooseInfoPoint_DELETE_OR_NOT */,
 				D3E9853B2C790DC90049AA2B /* Categories */,
 				D33211A62C2B1DB600227928 /* MainTabBar */,
 				D39CF1C72C57E6E000C80B1D /* MapPoints */,
@@ -745,6 +804,7 @@
 				D3EE26292C34433D00C7A698 /* String.swift */,
 				D33211B42C2B23AD00227928 /* String+Locale.swift */,
 				D336B8832C58AA1A007EB986 /* UIButton+Actions.swift */,
+				D38A88872CAEE03B00C3CE86 /* String+Size.swift */,
 				D3E985032C69FAC50049AA2B /* UIColor+Convertation.swift */,
 				D332124F2C2D471D00227928 /* UIMapKit+CLLocationManager.swift */,
 				D33211D72C2B2BCD00227928 /* UIView+Layer.swift */,
@@ -867,6 +927,10 @@
 		D33211FC2C2C36CB00227928 /* ManagedObject */ = {
 			isa = PBXGroup;
 			children = (
+				D38A885E2CABECAF00C3CE86 /* PPSourceMO+CoreDataClass.swift */,
+				D38A885F2CABECAF00C3CE86 /* PPSourceMO+CoreDataProperties.swift */,
+				D38A88602CABECAF00C3CE86 /* SourcePointMO+CoreDataClass.swift */,
+				D38A88612CABECAF00C3CE86 /* SourcePointMO+CoreDataProperties.swift */,
 				D373EF7D2C84D1360037CD3D /* PPCategoriesMO+CoreDataClass.swift */,
 				D373EF7E2C84D1360037CD3D /* PPCategoriesMO+CoreDataProperties.swift */,
 				D3E9851E2C763FD60049AA2B /* CategoriesPointMO+CoreDataClass.swift */,
@@ -883,6 +947,8 @@
 				D332120B2C2C493500227928 /* PlanPointDTO.swift */,
 				D373EF832C84D43F0037CD3D /* PPCategoriesDTO.swift */,
 				D3E985222C7644720049AA2B /* CategoriesPointDTO.swift */,
+				D38A88682CAC712700C3CE86 /* SourcePointDTO.swift */,
+				D38A886C2CAC745D00C3CE86 /* PPSourceDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -893,6 +959,8 @@
 				D33212092C2C3CE000227928 /* DTODescriptionPlanPoint.swift */,
 				D373EF812C84D35A0037CD3D /* DTODescriptionPPCategories.swift */,
 				D3E9851C2C7635A40049AA2B /* DTODescriptionCategoriesPoints.swift */,
+				D38A88662CAC70BD00C3CE86 /* DTODescriptionSourcePoint.swift */,
+				D38A886A2CAC73E100C3CE86 /* DTODescriptionPPSource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -903,6 +971,8 @@
 				D33212102C2C555200227928 /* PlanPointStorage.swift */,
 				D373EF852C84D6B90037CD3D /* PPCategoriesStorage.swift */,
 				D3E985562C7B33CC0049AA2B /* CategoriesPointStorage.swift */,
+				D38A88722CAC93A600C3CE86 /* SourcePointStorage.swift */,
+				D38A88742CAC954F00C3CE86 /* PPSourceStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -930,6 +1000,8 @@
 				D332121B2C2C5D0800227928 /* FRCServicePlanPoint.swift */,
 				D373EF872C84D6CE0037CD3D /* FRCServicePPCategories.swift */,
 				D3E985242C764FF20049AA2B /* FRCServiceCategoriesPoint.swift */,
+				D38A886E2CAC8A8900C3CE86 /* FRCServiceSourcePoint.swift */,
+				D38A88702CAC8AA400C3CE86 /* FRCServicePPSource.swift */,
 			);
 			path = FRCService;
 			sourceTree = "<group>";
@@ -980,6 +1052,7 @@
 				D33212372C2D2E0A00227928 /* MapPlanPointsViewModelProtocol.swift */,
 				D3E58D552C8DCCD100A07EC9 /* MapPlanPointsViewModel+Protocol.swift */,
 				D30F3C522CA4442000B0BE76 /* SearchGeoView.swift */,
+				D33CD8362CA95D4200C33BCE /* MyVC.swift */,
 				D33212332C2D2DCD00227928 /* MapPlanPointsVC.swift */,
 				D33212352C2D2DD600227928 /* MapPlanPointsVM.swift */,
 			);
@@ -1096,6 +1169,8 @@
 		D3672C572C31726400AF8C6A /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				D38A88822CAEDC7F00C3CE86 /* SourcePointCollectionView */,
+				D38A88892CAFCFA100C3CE86 /* ForestPointCollectionView */,
 				D3E9859F2C80FEF20049AA2B /* IconView */,
 				D3672C582C31726A00AF8C6A /* Map */,
 				D3E9855A2C7B5F050049AA2B /* InputDataTextField.swift */,
@@ -1143,6 +1218,79 @@
 				D373EF8B2C85137B0037CD3D /* PPCategoriesDataWorker.swift */,
 			);
 			path = PPCategories;
+			sourceTree = "<group>";
+		};
+		D38A88822CAEDC7F00C3CE86 /* SourcePointCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D38A88832CAEDCC200C3CE86 /* SourcePointCollectionView.swift */,
+				D38A88852CAEDCD000C3CE86 /* SourcePointCollectionCell.swift */,
+			);
+			path = SourcePointCollectionView;
+			sourceTree = "<group>";
+		};
+		D38A88892CAFCFA100C3CE86 /* ForestPointCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D38A888A2CAFCFC400C3CE86 /* ForestPointCollectionView.swift */,
+				D38A888C2CAFCFD300C3CE86 /* ForestPointCollectionCell.swift */,
+			);
+			path = ForestPointCollectionView;
+			sourceTree = "<group>";
+		};
+		D38A888E2CB0301B00C3CE86 /* ChooseInfoPoint_DELETE_OR_NOT */ = {
+			isa = PBXGroup;
+			children = (
+				D38A888F2CB0303100C3CE86 /* Adapter */,
+				D38A88902CB0303A00C3CE86 /* Coordinator */,
+				D38A88912CB0304600C3CE86 /* UseCase */,
+				D38A88962CB030D800C3CE86 /* ChooseInfoPointViewModelProtocol.swift */,
+				D38A88942CB030B800C3CE86 /* ChooseInfoPointVC.swift */,
+				D38A88922CB030A500C3CE86 /* ChooseInfoPointVM.swift */,
+			);
+			path = ChooseInfoPoint_DELETE_OR_NOT;
+			sourceTree = "<group>";
+		};
+		D38A888F2CB0303100C3CE86 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				D38A889C2CB031BF00C3CE86 /* Head */,
+				D38A889D2CB031C600C3CE86 /* Cell */,
+				D38A88A22CB0320900C3CE86 /* ChooseInfoPointAdapter.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		D38A88902CB0303A00C3CE86 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D38A88982CB0313000C3CE86 /* ChooseInfoPointAssembler.swift */,
+				D38A889A2CB0314E00C3CE86 /* ChooseInfoPointCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D38A88912CB0304600C3CE86 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D38A889C2CB031BF00C3CE86 /* Head */ = {
+			isa = PBXGroup;
+			children = (
+				D38A889E2CB031E100C3CE86 /* ChooseInfoPointHeadView.swift */,
+			);
+			path = Head;
+			sourceTree = "<group>";
+		};
+		D38A889D2CB031C600C3CE86 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D38A88A02CB031F700C3CE86 /* ChooseInfoPointCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D39CF1C12C57603100C80B1D /* CreatePoints */ = {
@@ -1236,7 +1384,6 @@
 		D3E985102C762DD80049AA2B /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				D3E985272C773ABF0049AA2B /* Sections */,
 				D3E985262C773AAF0049AA2B /* Head */,
 				D3E985132C762E1A0049AA2B /* Cell */,
 				D3E9851A2C76335C0049AA2B /* CategoriesPointAdapter.swift */,
@@ -1278,14 +1425,6 @@
 			path = Head;
 			sourceTree = "<group>";
 		};
-		D3E985272C773ABF0049AA2B /* Sections */ = {
-			isa = PBXGroup;
-			children = (
-				D3E985282C7758090049AA2B /* CategoriesPointSections.swift */,
-			);
-			path = Sections;
-			sourceTree = "<group>";
-		};
 		D3E9853B2C790DC90049AA2B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1293,7 +1432,6 @@
 				D3E9853C2C790DDB0049AA2B /* CreateCategoriesPoint */,
 				D3E9850F2C762D620049AA2B /* CategoriesPoint */,
 				D3E985A32C8233990049AA2B /* CategoriesPointMenuAction.swift */,
-				D3E985A12C8233300049AA2B /* CategoriesPointPredefined.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1341,6 +1479,8 @@
 				D3E985662C7D60B00049AA2B /* Adapter */,
 				D3E985672C7D60BD0049AA2B /* Coordinator */,
 				D3E985682C7D60CB0049AA2B /* UseCase */,
+				D38A88A42CB055CB00C3CE86 /* ChooseCategoriesPointVC_copy.swift */,
+				D36A1BF72CB070790047E9C5 /* ChooseCategoriesPointVC_copy2.swift */,
 				D3E9856D2C7D61410049AA2B /* ChooseCategoriesPointViewModelProtocol.swift */,
 				D3E9856B2C7D61210049AA2B /* ChooseCategoriesPointVC.swift */,
 				D3E985692C7D61080049AA2B /* ChooseCategoriesPointVM.swift */,
@@ -1351,7 +1491,6 @@
 		D3E985662C7D60B00049AA2B /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				D3E985752C7D68500049AA2B /* Sections */,
 				D3E985762C7D685A0049AA2B /* Head */,
 				D3E985772C7D686B0049AA2B /* Cell */,
 				D3E985782C7D68880049AA2B /* ChooseCategoriesPointAdapter.swift */,
@@ -1375,14 +1514,6 @@
 				D373EF8D2C85161E0037CD3D /* PPCategoriesDataWorker+CreateCategoriesPoint.swift */,
 			);
 			path = UseCase;
-			sourceTree = "<group>";
-		};
-		D3E985752C7D68500049AA2B /* Sections */ = {
-			isa = PBXGroup;
-			children = (
-				D3E9857A2C7D68C30049AA2B /* ChooseCategoriesPointSections.swift */,
-			);
-			path = Sections;
 			sourceTree = "<group>";
 		};
 		D3E985762C7D685A0049AA2B /* Head */ = {
@@ -1507,7 +1638,7 @@
 					"Руфв",
 				);
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					D315174E2C36A69B00FE34EB = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -1529,6 +1660,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = D332115E2C2ADB5000227928;
 			packageReferences = (
@@ -1561,6 +1693,7 @@
 				D33211772C2ADB5300227928 /* LaunchScreen.storyboard in Resources */,
 				D33211742C2ADB5300227928 /* Assets.xcassets in Resources */,
 				D332122B2C2CCDEF00227928 /* BLR2.json in Resources */,
+				D38A885C2CA98A6B00C3CE86 /* Localizable.strings in Resources */,
 				D332126B2C2E8FB500227928 /* icomoon.ttf in Resources */,
 				D332122A2C2CCDDF00227928 /* BLR1.json in Resources */,
 				D33212242C2C73BB00227928 /* BLR0.json in Resources */,
@@ -1697,12 +1830,15 @@
 			files = (
 				D336B8892C58BC8C007EB986 /* CreatePlanPointAssembler.swift in Sources */,
 				D33211BA2C2B281700227928 /* ProfileVC.swift in Sources */,
+				D38A88952CB030B800C3CE86 /* ChooseInfoPointVC.swift in Sources */,
 				D3672C5A2C3172C100AF8C6A /* NewPlaceDescriptionView.swift in Sources */,
 				D3EE262E2C34487C00C7A698 /* Double.swift in Sources */,
 				D3E9852F2C776A7A0049AA2B /* CategoriesPointAssembler.swift in Sources */,
 				D33212342C2D2DCD00227928 /* MapPlanPointsVC.swift in Sources */,
+				D38A88A32CB0320900C3CE86 /* ChooseInfoPointAdapter.swift in Sources */,
 				D3E9856C2C7D61210049AA2B /* ChooseCategoriesPointVC.swift in Sources */,
 				D3E58D562C8DCCD100A07EC9 /* MapPlanPointsViewModel+Protocol.swift in Sources */,
+				D38A889B2CB0314E00C3CE86 /* ChooseInfoPointCoordinator.swift in Sources */,
 				D336B8822C58A824007EB986 /* UIButton+Styles.swift in Sources */,
 				D33211CB2C2B28C200227928 /* AuthService+Profile.swift in Sources */,
 				D3EE262A2C34433D00C7A698 /* String.swift in Sources */,
@@ -1712,6 +1848,7 @@
 				D39CF1C42C57608300C80B1D /* CreatePlanPointVC.swift in Sources */,
 				D373EF8C2C85137B0037CD3D /* PPCategoriesDataWorker.swift in Sources */,
 				D332125B2C2D4D0F00227928 /* MKMapViewService.swift in Sources */,
+				D38A88932CB030A500C3CE86 /* ChooseInfoPointVM.swift in Sources */,
 				D3672C672C336B5800AF8C6A /* LocationHelper+MapPlanPoints.swift in Sources */,
 				D3E58D5E2C99FC1700A07EC9 /* ColorPickerBigView.swift in Sources */,
 				D3E9857D2C7D69230049AA2B /* ChooseCategoriesPointHeadView.swift in Sources */,
@@ -1719,17 +1856,20 @@
 				D332124C2C2D422900227928 /* MapPlanPointsCoordinator.swift in Sources */,
 				D33211C52C2B28B500227928 /* ProfileAdapter.swift in Sources */,
 				D3E58D5A2C8E03FD00A07EC9 /* LocationPinViewByTap.swift in Sources */,
+				D38A88972CB030D800C3CE86 /* ChooseInfoPointViewModelProtocol.swift in Sources */,
 				D3E985912C7F82CF0049AA2B /* CategoriesPointDataWorker+CategoriesPoint.swift in Sources */,
 				D3E9858D2C7F24E60049AA2B /* EmojiPickerBigView.swift in Sources */,
 				D33211D62C2B2B7B00227928 /* UIView+Styles.swift in Sources */,
+				D38A88842CAEDCC200C3CE86 /* SourcePointCollectionView.swift in Sources */,
 				D31517792C36B95C00FE34EB /* BlrDataWorker+Profile.swift in Sources */,
+				D38A88992CB0313000C3CE86 /* ChooseInfoPointAssembler.swift in Sources */,
+				D38A88882CAEE03B00C3CE86 /* String+Size.swift in Sources */,
 				D3E985512C7B2F8F0049AA2B /* CategoriesPointDataWorker.swift in Sources */,
 				D33212432C2D326F00227928 /* LocationMarkerView.swift in Sources */,
 				D33211E52C2B2F9300227928 /* Collection+Register.swift in Sources */,
 				D336B8802C58A5EF007EB986 /* LineTextView.swift in Sources */,
 				D363A9E62C675BBB00CA49CF /* CircleView.swift in Sources */,
 				D33211D82C2B2BCD00227928 /* UIView+Layer.swift in Sources */,
-				D3E9857B2C7D68C30049AA2B /* ChooseCategoriesPointSections.swift in Sources */,
 				D3672C5D2C31962E00AF8C6A /* MKMapViewService+MapPlanPoint.swift in Sources */,
 				D3E985192C7631460049AA2B /* CategoriesPointVM.swift in Sources */,
 				D3E985742C7D61C90049AA2B /* FRCServiceCategoriesPoint+ChooseCategoriesPoint.swift in Sources */,
@@ -1740,11 +1880,12 @@
 				D3E985A02C80FEF20049AA2B /* IconViewVC.swift in Sources */,
 				D33212682C2E899000227928 /* TabBar.swift in Sources */,
 				D33211A52C2B1BB200227928 /* ParametersHelper.swift in Sources */,
-				D3E985292C7758090049AA2B /* CategoriesPointSections.swift in Sources */,
 				D336B87E2C58A51B007EB986 /* CreatePlanPointVM.swift in Sources */,
+				D38A88A52CB055D200C3CE86 /* ChooseCategoriesPointVC_copy.swift in Sources */,
 				D336B8842C58AA1A007EB986 /* UIButton+Actions.swift in Sources */,
 				D3E985412C790E3C0049AA2B /* CreateCategoriesPointVC.swift in Sources */,
 				D3E985332C776FB30049AA2B /* FRCServiceCategoriesPoint+CategoriesPoint.swift in Sources */,
+				D38A88862CAEDCD000C3CE86 /* SourcePointCollectionCell.swift in Sources */,
 				D3EE262C2C34440000C7A698 /* CLLocationCoordinate2D.swift in Sources */,
 				D332125D2C2D6D2300227928 /* EventDataSourse.swift in Sources */,
 				D3E985792C7D68880049AA2B /* ChooseCategoriesPointAdapter.swift in Sources */,
@@ -1763,12 +1904,13 @@
 				D3E985722C7D617B0049AA2B /* ChooseCategoriesPointCoordinator.swift in Sources */,
 				D33212422C2D326F00227928 /* LocationClusterView.swift in Sources */,
 				D336B8782C589ED7007EB986 /* LineTextField.swift in Sources */,
+				D38A888D2CAFCFD400C3CE86 /* ForestPointCollectionCell.swift in Sources */,
 				D33211CC2C2B28C200227928 /* NotificationDataWorker+Profile.swift in Sources */,
+				D38A88A12CB031F700C3CE86 /* ChooseInfoPointCell.swift in Sources */,
 				D3B4E2872C3A92AF0031EF14 /* BlrDataSourseService.swift in Sources */,
 				D3E985172C762F920049AA2B /* CategoriesPointViewModelProtocol.swift in Sources */,
 				D3E9852B2C7759EF0049AA2B /* CategoriesPointHeadView.swift in Sources */,
 				D3E985A42C8233990049AA2B /* CategoriesPointMenuAction.swift in Sources */,
-				D3E985A22C8233300049AA2B /* CategoriesPointPredefined.swift in Sources */,
 				D3E985642C7D4D050049AA2B /* TabBarButton.swift in Sources */,
 				D33211B52C2B23AD00227928 /* String+Locale.swift in Sources */,
 				D33211852C2AF82900227928 /* UIFont+Consts.swift in Sources */,
@@ -1777,10 +1919,12 @@
 				D3E58D5C2C8E282A00A07EC9 /* PlanPointDataWorker+MapPlanPoints.swift in Sources */,
 				D33212642C2E753F00227928 /* UIColor+Consts.swift in Sources */,
 				D3B9F4AB2C5FD50B0039CD13 /* MKMapView+Consts.swift in Sources */,
+				D38A889F2CB031E100C3CE86 /* ChooseInfoPointHeadView.swift in Sources */,
 				D33212362C2D2DD600227928 /* MapPlanPointsVM.swift in Sources */,
 				D33211842C2AF82900227928 /* UIImage+Consts.swift in Sources */,
 				D33212502C2D471D00227928 /* UIMapKit+CLLocationManager.swift in Sources */,
 				D33212282C2CB62D00227928 /* BLR0Model.swift in Sources */,
+				D38A888B2CAFCFC400C3CE86 /* ForestPointCollectionView.swift in Sources */,
 				D33211AF2C2B1E4100227928 /* MainTabBarCoordinator.swift in Sources */,
 				D3E985552C7B319B0049AA2B /* CreateCategoriesPointAssembler.swift in Sources */,
 				D33211C22C2B28A700227928 /* ProfileAssembler.swift in Sources */,
@@ -1792,10 +1936,12 @@
 				D3E9855B2C7B5F050049AA2B /* InputDataTextField.swift in Sources */,
 				D33211C32C2B28A700227928 /* ProfileCoordinator.swift in Sources */,
 				D3E985152C762F450049AA2B /* CategoriesPointVC.swift in Sources */,
+				D36A1BF82CB070790047E9C5 /* ChooseCategoriesPointVC_copy2.swift in Sources */,
 				D332116B2C2ADB5000227928 /* AppDelegate.swift in Sources */,
 				D3672C602C3342E800AF8C6A /* LocationHelper.swift in Sources */,
 				D332123D2C2D318400227928 /* LocationPinView.swift in Sources */,
 				D336B8902C58C37D007EB986 /* PointDataWorker+PlanPoint.swift in Sources */,
+				D33CD8372CA95D4200C33BCE /* MyVC.swift in Sources */,
 				D33211DF2C2B2DDD00227928 /* ProfileSettingsCell.swift in Sources */,
 				D33212532C2D489B00227928 /* AlertService.swift in Sources */,
 				D3EE26302C3470E800C7A698 /* Converter.swift in Sources */,
@@ -1827,6 +1973,7 @@
 			files = (
 				D33212192C2C579C00227928 /* NSPredicate+Const.swift in Sources */,
 				D373EF822C84D35A0037CD3D /* DTODescriptionPPCategories.swift in Sources */,
+				D38A88732CAC93A600C3CE86 /* SourcePointStorage.swift in Sources */,
 				D33212112C2C555200227928 /* PlanPointStorage.swift in Sources */,
 				D373EF842C84D43F0037CD3D /* PPCategoriesDTO.swift in Sources */,
 				D33212042C2C378700227928 /* PlanPointMO+CoreDataProperties.swift in Sources */,
@@ -1837,14 +1984,25 @@
 				D3E985212C763FD60049AA2B /* CategoriesPointMO+CoreDataProperties.swift in Sources */,
 				D332121C2C2C5D0800227928 /* FRCServicePlanPoint.swift in Sources */,
 				D373EF7F2C84D1360037CD3D /* PPCategoriesMO+CoreDataClass.swift in Sources */,
+				D38A886F2CAC8A8900C3CE86 /* FRCServiceSourcePoint.swift in Sources */,
 				D373EF862C84D6B90037CD3D /* PPCategoriesStorage.swift in Sources */,
+				D38A88692CAC712700C3CE86 /* SourcePointDTO.swift in Sources */,
 				D373EF802C84D1360037CD3D /* PPCategoriesMO+CoreDataProperties.swift in Sources */,
+				D38A88712CAC8AA400C3CE86 /* FRCServicePPSource.swift in Sources */,
 				D315172F2C35CB0700FE34EB /* PointDataBase.xcdatamodeld in Sources */,
+				D38A886D2CAC745D00C3CE86 /* PPSourceDTO.swift in Sources */,
 				D3E985232C7644720049AA2B /* CategoriesPointDTO.swift in Sources */,
 				D332120A2C2C3CE000227928 /* DTODescriptionPlanPoint.swift in Sources */,
 				D33212142C2C55F600227928 /* CoreDataService.swift in Sources */,
 				D3E9851D2C7635A50049AA2B /* DTODescriptionCategoriesPoints.swift in Sources */,
+				D38A88752CAC954F00C3CE86 /* PPSourceStorage.swift in Sources */,
 				D3E985252C764FF20049AA2B /* FRCServiceCategoriesPoint.swift in Sources */,
+				D38A88622CABECAF00C3CE86 /* SourcePointMO+CoreDataProperties.swift in Sources */,
+				D38A88632CABECAF00C3CE86 /* PPSourceMO+CoreDataProperties.swift in Sources */,
+				D38A88672CAC70BD00C3CE86 /* DTODescriptionSourcePoint.swift in Sources */,
+				D38A886B2CAC73E100C3CE86 /* DTODescriptionPPSource.swift in Sources */,
+				D38A88642CABECAF00C3CE86 /* SourcePointMO+CoreDataClass.swift in Sources */,
+				D38A88652CABECAF00C3CE86 /* PPSourceMO+CoreDataClass.swift in Sources */,
 				D33212032C2C378700227928 /* PlanPointMO+CoreDataClass.swift in Sources */,
 				D3E985572C7B33CD0049AA2B /* CategoriesPointStorage.swift in Sources */,
 			);
@@ -1870,8 +2028,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				D33211762C2ADB5300227928 /* Base */,
+				D38A88582CA9892C00C3CE86 /* en */,
+				D38A88592CA989D600C3CE86 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D38A885A2CA98A6B00C3CE86 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D38A885B2CA98A6B00C3CE86 /* en */,
+				D38A885D2CA98A8F00C3CE86 /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1963,6 +2132,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2026,6 +2196,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2081,7 +2252,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A57C01BFF1D308B239D4343 /* Pods-WoodWander.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -2095,6 +2265,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -2119,7 +2290,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C08A9069F5223B5DF31BD03 /* Pods-WoodWander.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -2133,6 +2303,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

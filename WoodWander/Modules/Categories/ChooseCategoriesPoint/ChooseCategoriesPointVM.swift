@@ -10,8 +10,7 @@ import Storage
 
 protocol ChooseCategoriesPointAdapterProtocol: AnyObject {
     //func reloadData(_ dtoList: [any DTODescriptionCategoriesPoint])
-    func reloadData(dtosPredefined: [any DTODescriptionCategoriesPoint],
-                    dtosCustom: [any DTODescriptionCategoriesPoint],
+    func reloadData(dtos: [any DTODescriptionCategoriesPoint],
                     dictCheck: [String: Bool])
     func makeTableView() -> UITableView
     var tapButtonOnDTO: ((_ dto: (any DTODescriptionCategoriesPoint)?,
@@ -106,16 +105,10 @@ final class ChooseCategoriesPointVM: ChooseCategoriesPointViewModelProtocol {
                 self.baseDtos.append(newPPCategoriesDTO)
             
             
-            //Разделим категории на предопределенные и пользовательские
-            let dtosPredefined = self.getDtosPredefined(self.categoriesDtos)
-            let dtosCustom = self.getDtosCustom(self.categoriesDtos)
-            
-            
             // Создаем словарь
             let dictCheck = Dictionary(uniqueKeysWithValues: self.saveDtos.map { ($0.uuidCategory, $0.isUsed) })
             
-            self.adapter.reloadData(dtosPredefined: dtosPredefined,
-                                    dtosCustom: dtosCustom,
+            self.adapter.reloadData(dtos: self.categoriesDtos,
                                     dictCheck: dictCheck)
         }
         adapter.tapButtonOnDTO = { [weak self] dto, check, indexPath in
@@ -281,27 +274,8 @@ final class ChooseCategoriesPointVM: ChooseCategoriesPointViewModelProtocol {
 
 extension ChooseCategoriesPointVM {
     
-    private func getDtosPredefined(_ dtos: [any DTODescriptionCategoriesPoint]) -> [any DTODescriptionCategoriesPoint] {
-        var dtosPredefined = dtos.compactMap {
-            if $0.predefined  == true { return $0 } else { return nil }
-        }
-        return dtosPredefined
-    }
-    
-    private func getDtosCustom(_ dtos: [any DTODescriptionCategoriesPoint]) -> [any DTODescriptionCategoriesPoint] {
-        let dtosCustom = dtos
-            .compactMap { if $0.predefined == false { return $0 } else { return nil } }
-        return dtosCustom
-    }
-    
     private func customReloadData(_ dtos: [any DTODescriptionCategoriesPoint]) {
 
-        //adapter использует два dto типа DTODescriptionCategoriesPoint
-        //и словарь формата (String: Bool) (uuid: isUsed)
-        
-        let dtosPredefined = getDtosPredefined(dtos)
-        let dtosCustom = getDtosCustom(dtos)
-        
         // Создаем словарь для быстрого доступа к значениям по uuid
         var dictCheck = Dictionary(uniqueKeysWithValues: dtos.map { ($0.uuid, false) })
         // Обновляем значения в dictCheck на основе значений из saveDtos
@@ -309,8 +283,7 @@ extension ChooseCategoriesPointVM {
             dictCheck[saveDtos[i].uuidCategory] = saveDtos[i].isUsed
         }
                 
-        self.adapter.reloadData(dtosPredefined: dtosPredefined,
-                                dtosCustom: dtosCustom,
+        self.adapter.reloadData(dtos: dtos,
                                 dictCheck: dictCheck)
     }
         

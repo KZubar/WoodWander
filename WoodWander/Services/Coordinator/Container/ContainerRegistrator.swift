@@ -23,6 +23,8 @@ final class ContainerRegistrator {
         container.register({ PlanPointStorage<PlanPointDTO>() })
         container.register({ PPCategoriesStorage<PPCategoriesDTO>() })
         container.register({ CategoriesPointStorage<CategoriesPointDTO>() })
+        container.register({ PPSourceStorage<PPSourceDTO>() })
+        container.register({ SourcePointStorage<SourcePointDTO>() })
 
         container.register({ AllBlrStorage() })
         container.register({ AllBlrStorageCoordinate() })

@@ -2,7 +2,7 @@
 //  PlanPointMO+CoreDataProperties.swift
 //  Storage
 //
-//  Created by k.zubar on 7.09.24.
+//  Created by k.zubar on 1.10.24.
 //
 //
 

@@ -33,6 +33,13 @@ final class MapPlanPointsVC: UIViewController {
         static let locationOn: FontType = UIImage.Map.locationOn
 
     }
+    
+    private enum ConstSearchGeoViewSize {
+        static let viewHeight: Double = 45.0
+        static let buttonHeight: Double = 35.0
+        static let buttonCloseWidth: Double = 70.0
+        static let distanceBetween: Double = 5.0
+    }
 
     //TODO: - variables
     private var isSelectedAnnotation: Bool = false {
@@ -265,9 +272,10 @@ final class MapPlanPointsVC: UIViewController {
     
     private func setupConstraintsSearchGeoView() {
         self.searchGeoView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(8.0)
+            make.right.equalToSuperview().inset(8)
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(8)
-            make.height.equalTo(ConstButton.searchGeoHeight)
+            make.height.equalTo(ConstSearchGeoViewSize.viewHeight)
+            make.width.equalTo(ConstSearchGeoViewSize.viewHeight)
         }
     }
 
@@ -414,9 +422,75 @@ extension MapPlanPointsVC: MKMapViewDelegate {
 
 
 extension MapPlanPointsVC: SearchGeoViewPotocol {
-
     
-    func searchGeoViewShouldReturn(_ searchGeoView: SearchGeoView) -> Bool {
+    func resizeButtonDidTap(_ view: SearchGeoView) {
+        
+        searchGeoView.resizeButtonIsUserInteractionEnabled = false
+        
+        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: [], animations: {
+            
+            // Первая анимация: расширение searchView, меняем closeButton Constraints
+            UIView.addKeyframe(withRelativeStartTime: 0.00, relativeDuration: 0.25) {
+                self.searchGeoView.snp.remakeConstraints { make in
+                    make.right.equalToSuperview().inset(8)
+                    make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(8)
+                    make.height.equalTo(ConstSearchGeoViewSize.viewHeight)
+                    make.width.equalTo(ConstSearchGeoViewSize.viewHeight
+                                       + ConstSearchGeoViewSize.distanceBetween
+                                       + ConstSearchGeoViewSize.buttonCloseWidth)
+                }
+                self.searchGeoView.setResizeViewFrame(status: 0)
+                self.view.layoutIfNeeded()
+            }
+            
+            // третья анимация: показываем closeButton, раздвигаем searchView и меняем textField Constraints
+            UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.15) {
+                self.searchGeoView.closeButtonAlpha = 1.0
+                self.searchGeoView.snp.remakeConstraints { make in
+                    make.right.equalToSuperview().inset(8)
+                    make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(8)
+                    make.height.equalTo(ConstSearchGeoViewSize.viewHeight)
+                    make.width.equalTo(ConstSearchGeoViewSize.viewHeight*2
+                                       + ConstSearchGeoViewSize.distanceBetween*2
+                                       + ConstSearchGeoViewSize.buttonCloseWidth)
+                }
+                self.searchGeoView.setResizeViewFrame(status: 1)
+                self.view.layoutIfNeeded()
+            }
+            
+            // последняя анимация: показываем textField и расширяем до конца searchView
+            UIView.addKeyframe(withRelativeStartTime: 0.40, relativeDuration: 0.60) {
+                self.searchGeoView.textFieldAlpha = 1.0
+                self.searchGeoView.snp.remakeConstraints { make in
+                    make.right.equalToSuperview().inset(8)
+                    make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(8)
+                    make.height.equalTo(ConstSearchGeoViewSize.viewHeight)
+                    make.width.equalTo(self.view.frame.width - 8*2)
+                }
+                self.view.layoutIfNeeded()
+            }
+        }, completion: nil)
+    }
+    
+    func closeButtonDidTap(_ view: SearchGeoView) {
+        
+        searchGeoView.resizeButtonIsUserInteractionEnabled = true
+        
+        UIView.animate(withDuration: 0.25) {
+            self.searchGeoView.setResizeViewFrame(status: 2)
+            self.searchGeoView.snp.remakeConstraints { make in
+                make.right.equalToSuperview().inset(8)
+                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).inset(8)
+                make.height.equalTo(ConstSearchGeoViewSize.viewHeight)
+                make.width.equalTo(ConstSearchGeoViewSize.viewHeight)
+            }
+            self.view.layoutIfNeeded()
+            self.searchGeoView.closeButtonAlpha = 0.0
+            self.searchGeoView.textFieldAlpha = 0.0
+        }
+    }
+    
+    func searchGeoViewShouldReturn(_ view: SearchGeoView) -> Bool {
         //всегда возвращаем true
         guard
             let coordinate2D = viewModel.mapViewSearchPointByText(
@@ -465,6 +539,12 @@ extension MapPlanPointsVC: SearchGeoViewPotocol {
 
 extension MapPlanPointsVC: NewPlaceDescriptionViewPotocol {
     func removeLastPointAnnotation() {
+//        let vc = MyVC()
+//        vc.modalTransitionStyle = .coverVertical
+//        vc.modalPresentationStyle = .automatic
+//        
+//        self.present(vc, animated: true)
+        
         self.newPlaceView.isHidden = true
         viewModel.removeLastPointAnnotation(mapView: mapView)
     }

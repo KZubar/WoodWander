@@ -14,7 +14,7 @@ final class CategoriesPointAdapter: NSObject {
         static let HeaderViewHeight: Double = 32.0
     }
     
-    var sections: [CategoriesPointSections] = [] {
+    var dtos: [any DTODescriptionCategoriesPoint] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -37,17 +37,22 @@ final class CategoriesPointAdapter: NSObject {
         tableView.allowsSelection = false
         tableView.backgroundColor = .systemGray3 //FIXME: - установить цвет
         
-        tableView.layer.cornerRadius = 10.0
-        tableView.layer.borderWidth = 1.0
-        tableView.layer.borderColor = UIColor.appWhite.cgColor //FIXME: - установить цвет
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableView.automaticDimension
+        
+        tableView.keyboardDismissMode = .onDrag
+        
+
+        tableView.cornerRadius = 10.0
+        tableView.setBorder(width: 1.0, color: .appWhite) //FIXME: - установить цвет
 
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = .appBlack
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 
         tableView.isScrollEnabled = true
-        tableView.showsVerticalScrollIndicator = true
-        tableView.tableHeaderView = tableHeaderView
+        tableView.showsVerticalScrollIndicator = false
+        //tableView.tableHeaderView = tableHeaderView
         
         tableView.tableHeaderView = nil
         
@@ -81,34 +86,24 @@ final class CategoriesPointAdapter: NSObject {
 extension CategoriesPointAdapter: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = sections[section]
-        return section.numberOfRows
+        return self.dtos.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = sections[indexPath.section]
-
-        switch section {
-        case .predefined(let rows):
-            let cell: CategoriesPointCell = tableView.dequeue(at: indexPath)
-            cell.setupCell(rows[indexPath.row], indexPath: indexPath)
-            cell.buttonDidTap = { [weak self] dto in
-                self?.tapButtonOnDTO?(dto, indexPath)
-            }
-
-            return cell
-        case .custom(let rows):
-            let cell: CategoriesPointCell = tableView.dequeue(at: indexPath)
-            cell.setupCell(rows[indexPath.row], indexPath: indexPath)
-            cell.buttonDidTap = { [weak self] dto in
-                self?.tapButtonOnDTO?(dto, indexPath)
-            }
-            return cell
+        guard
+            let dto = dtos[indexPath.row] as? CategoriesPointDTO
+        else { return .init() }
+        
+        let cell: CategoriesPointCell = tableView.dequeue(at: indexPath)
+        cell.setupCell(dto, indexPath: indexPath)
+        cell.buttonDidTap = { [weak self] dto in
+            self?.tapButtonOnDTO?(dto, indexPath)
         }
+        return cell
     }
     
     //пользовательский вид для верхнего колонтитула
@@ -147,22 +142,7 @@ extension CategoriesPointAdapter: CategoriesPointAdapterProtocol {
     }
     
     func reloadData(_ dtos: [any DTODescriptionCategoriesPoint]) {
-        
-        let categoriesPointDtos = dtos.compactMap { dto in
-            if let categoriesPointDTO = dto as? CategoriesPointDTO {
-                return categoriesPointDTO
-            } else { return nil}
-        }
-        
-        let dtoPredefined = categoriesPointDtos
-            .compactMap { if $0.predefined  == true { return $0 } else { return nil } }
-        let dtoCustom = categoriesPointDtos
-            .compactMap { if $0.predefined == false { return $0 } else { return nil } }
-
-        self.sections = [
-            .predefined(dtoPredefined),
-            .custom(dtoCustom)
-        ]
+        self.dtos = dtos
         self.tableView.subviews.forEach { view in
             view.setShadow()
         }

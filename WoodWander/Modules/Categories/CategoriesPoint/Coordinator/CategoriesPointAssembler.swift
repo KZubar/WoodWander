@@ -23,9 +23,6 @@ final class CategoriesPointAssembler {
         
         let dataWorker: CategoriesPointDataWorker = container.resolve()
         
-        //FIXME: - можно сотавить, но лучше убрать в другое место
-        dataWorker.createPredefinedDTO()
-        
         let vm = CategoriesPointVM(frcService: frcService,
                                    dataWorker: dataWorker,
                                    adapter: adapter,
@@ -38,7 +35,6 @@ final class CategoriesPointAssembler {
         return .init { request in
             request.predicate = .CategoriesPoint.all
             request.sortDescriptors = [
-                .CategoriesPoint.byPredefined,
                 .CategoriesPoint.byIsDisabled,
                 .CategoriesPoint.byDate,
                 .CategoriesPoint.byName

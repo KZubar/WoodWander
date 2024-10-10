@@ -14,10 +14,7 @@ final class ChooseCategoriesPointAdapter: NSObject {
         static let HeaderViewHeight: Double = 32.0
     }
     
-    private var sections: [ChooseCategoriesPointSections] = [.predefined, .custom]
-    
-    private var dtosPredefined: [any DTODescriptionCategoriesPoint] = []
-    private var dtosCustom: [any DTODescriptionCategoriesPoint] = []
+    private var dtos: [any DTODescriptionCategoriesPoint] = []
     private var dictCheck: [String: Bool] = [:]
 
     var tapButtonOnDTO: ((_ dto: (any DTODescriptionCategoriesPoint)?,
@@ -54,8 +51,8 @@ final class ChooseCategoriesPointAdapter: NSObject {
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 
         tableView.isScrollEnabled = true
-        tableView.showsVerticalScrollIndicator = true
-        tableView.tableHeaderView = tableHeaderView
+        tableView.showsVerticalScrollIndicator = false
+        //tableView.tableHeaderView = tableHeaderView
         
         tableView.tableHeaderView = nil
                 
@@ -91,31 +88,19 @@ extension ChooseCategoriesPointAdapter: UITableViewDelegate { }
 extension ChooseCategoriesPointAdapter: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = sections[section]
-        switch section {
-        case .predefined:
-            return self.dtosPredefined.count
-        case .custom:
-            return self.dtosCustom.count
-        }
+        return self.dtos.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = sections[indexPath.section]
 
         var dto: (any DTODescriptionCategoriesPoint)
         
-        switch section {
-        case .predefined:
-            dto = dtosPredefined[indexPath.row]
-        case .custom:
-            dto = dtosCustom[indexPath.row]
-        }
-        
+        dto = dtos[indexPath.row]
+
         let cell: ChooseCategoriesPointCell = tableView.dequeue(at: indexPath)
         let check: Bool = dictCheck[dto.uuid] ?? false
         cell.setupCell(dto, check: check, indexPath: indexPath)
@@ -178,12 +163,10 @@ extension ChooseCategoriesPointAdapter: ChooseCategoriesPointAdapterProtocol {
         return self.tableView
     }
     
-    func reloadData(dtosPredefined: [any DTODescriptionCategoriesPoint],
-                    dtosCustom: [any DTODescriptionCategoriesPoint],
+    func reloadData(dtos: [any DTODescriptionCategoriesPoint],
                     dictCheck: [String: Bool]) {
 
-        self.dtosPredefined = dtosPredefined
-        self.dtosCustom = dtosCustom
+        self.dtos = dtos
         self.dictCheck = dictCheck
 
         tableView.reloadData()

@@ -29,7 +29,6 @@ final class CreateCategoriesPointVM: CreateCategoriesPointViewModelProtocol {
     var date: Date?
     var icon: String?
     var isDisabled: Bool = false
-    var predefined: Bool = false
     var uuid: String?
 
     var catchNameError: ((String?) -> Void)?
@@ -60,7 +59,6 @@ final class CreateCategoriesPointVM: CreateCategoriesPointViewModelProtocol {
             self.date = dtoCategories.date
             self.icon = dtoCategories.icon
             self.isDisabled = dtoCategories.isDisabled
-            self.predefined = dtoCategories.predefined
             self.uuid = dtoCategories.uuid
         }
         bind()
@@ -99,7 +97,6 @@ final class CreateCategoriesPointVM: CreateCategoriesPointViewModelProtocol {
                                           icon: self.icon,
                                           isDisabled: self.isDisabled,
                                           name: name,
-                                          predefined: self.predefined,
                                           uuid: uuid)
         }
         
@@ -113,7 +110,6 @@ final class CreateCategoriesPointVM: CreateCategoriesPointViewModelProtocol {
         dtoSave?.color = self.color
         dtoSave?.icon = self.icon
         dtoSave?.isDisabled = self.isDisabled
-        dtoSave?.predefined = self.predefined
         
         //переопределим переменную с новыми данными
         self.dto = dtoSave

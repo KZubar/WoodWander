@@ -19,7 +19,6 @@ import Foundation
     var date: Date? {get set}
     var icon: String? {get set}
     var isDisabled: Bool {get set}
-    var predefined: Bool {get set}
     var uuid: String? {get set}
 
     func dismissDidTap()

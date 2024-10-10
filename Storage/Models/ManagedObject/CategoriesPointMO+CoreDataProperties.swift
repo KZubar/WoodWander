@@ -22,7 +22,6 @@ extension CategoriesPointMO {
     @NSManaged public var icon: String?
     @NSManaged public var isDisabled: Bool
     @NSManaged public var name: String?
-    @NSManaged public var predefined: Bool
     @NSManaged public var uuid: String?
 
 }

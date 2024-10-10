@@ -30,7 +30,6 @@ public class CategoriesPointMO: NSManagedObject, MODescriptionCategoriesPoint  {
         self.isDisabled = categoriesPointDTO.isDisabled
         self.name = categoriesPointDTO.name
         self.uuid = categoriesPointDTO.uuid
-        self.predefined = categoriesPointDTO.predefined
     }
     
 

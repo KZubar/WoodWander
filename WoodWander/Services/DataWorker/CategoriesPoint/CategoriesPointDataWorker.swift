@@ -89,10 +89,6 @@ final class CategoriesPointDataWorker {
         }
     }
     
-    func createPredefinedDTO() {
-        storage.createPredefinedDTO()
-    }
-    
 
 }
 
@@ -129,8 +125,7 @@ extension CategoriesPointDataWorker {
         //получим справочник категорий
         let dtosCategory = storage.fetchDTO(
             predicate: .Point.all,
-            sortDescriptors: [.CategoriesPoint.byPredefined,
-                              .CategoriesPoint.byIsDisabled,
+            sortDescriptors: [.CategoriesPoint.byIsDisabled,
                               .CategoriesPoint.byDate,
                               .CategoriesPoint.byName]
         )

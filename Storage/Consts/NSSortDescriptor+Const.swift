@@ -33,12 +33,7 @@ public extension NSSortDescriptor {
             let keypath = #keyPath(CategoriesPointMO.name)
             return .init(key: keypath, ascending: false)
         }
-        
-        public static var byPredefined: NSSortDescriptor {
-            let keypath = #keyPath(CategoriesPointMO.predefined)
-            return .init(key: keypath, ascending: true)
-        }
-        
+                
         public static var byIsDisabled: NSSortDescriptor {
             let keypath = #keyPath(CategoriesPointMO.isDisabled)
             return .init(key: keypath, ascending: false)

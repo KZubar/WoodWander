@@ -37,14 +37,12 @@ extension CategoriesPointCoordinator: CategoriesPointCoordinatorProtocol {
         //        rootVC?.present(menu, animated: true)
         //FIXME: -
         
-        var menuItems = [
+        let menuItems = [
             CategoriesPointMenuAction.disabled,
             CategoriesPointMenuAction.edit,
-            CategoriesPointMenuAction.share]
+            CategoriesPointMenuAction.share,
+            CategoriesPointMenuAction.delete]
         
-        if (dto?.predefined ?? false) == false {
-            menuItems.append(CategoriesPointMenuAction.delete)
-        }
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         for item in menuItems {

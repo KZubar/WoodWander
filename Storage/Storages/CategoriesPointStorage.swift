@@ -8,30 +8,6 @@
 import Foundation
 import CoreData
 
-public enum CategoriesPointPredefined {
-    
-    case favorites
-    
-    var uuid: String {
-        switch self {
-        case .favorites: return "00000000-0000-0000-0000-000000000001"
-        }
-    }
-
-    var name: String {
-        switch self {
-        case .favorites: return "Избранное"
-        }
-    }
-
-    var icon: String {
-        switch self {
-        case .favorites: return "❤️"
-        }
-    }
-    
-}
-
 public class CategoriesPointStorage<DTO: DTODescriptionCategoriesPoint> {
     
     public typealias CompletionHandler = (Bool) -> Void
@@ -91,28 +67,6 @@ public class CategoriesPointStorage<DTO: DTODescriptionCategoriesPoint> {
             }
         }
         
-    }
-
-    public func createPredefinedDTO() {
-        
-        let fa = CategoriesPointPredefined.favorites
-        let dtoFavourites = CategoriesPointDTO(color: "",
-                                               date: Date(),
-                                               descr: "",
-                                               icon: fa.icon,
-                                               isDisabled: false,
-                                               name: fa.name,
-                                               predefined: true,
-                                               uuid: fa.uuid)
-        
-        
-        let context = CoreDataService.shared.backgroundContext
-        if fetchMO(
-            predicate: .CategoriesPoint.category(byUuid: dtoFavourites.uuid),
-            context: context
-        ).isEmpty {
-            create(dto: dtoFavourites)
-        }
     }
     
     public func createDTOs(

@@ -9,12 +9,8 @@ import UIKit
 
 final class ChooseCategoriesPointVC: UIViewController {
 
+
     private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .appWhite
-        return view
-    }()
-    private lazy var infoView: UIView = {
         let view = UIView()
         view.backgroundColor = .appWhite
         return view
@@ -28,81 +24,93 @@ final class ChooseCategoriesPointVC: UIViewController {
         label.textAlignment = .center
         return label
     }()
-    
+
     private lazy var newCategoriesButton: UIButton = .bigButton(
         title: "   Новый список",
         image: UIImage.init(icon: UIImage.All.plus,
                             size: CGSize(width: 12, height: 12),
                             textColor: .appBlue)
     ).withAction(self, #selector(newCategoriesDidTap), for: .touchUpInside)
-    
+
     private lazy var saveButton: UIButton = .bigButton(
         title: "Готово",
         image: nil,
         titleColor: .appWhite,
         backgroundColor: .appBlue
     ).withAction(self, #selector(saveDidTap), for: .touchUpInside)
-    
+
     private lazy var cancelButton: UIButton = {
         let bttn = UIButton()
         bttn.setIcon(
             icon: UIImage.Categories.closeRound,
             iconSize: 20,
-            color: .appBlack,
+            color: .appBlue,
             forState: .normal)
         return bttn
     }().withAction(self,
                    #selector(cancelDidTap),
                    for: .touchUpInside)
 
+    private lazy var openEditPointModuleButton: UIButton = {
+        let bttn = UIButton()
+        bttn.setIcon(
+            icon: UIImage.Categories.editLocation,
+            iconSize: 25,
+            color: .appBlue,
+            forState: .normal)
+        return bttn
+    }().withAction(self,
+                   #selector(openEditPointModuleButtonDidTap),
+                   for: .touchUpInside)
 
-    
-    
-    
+
+
+
+
+ 
     private lazy var tableView: UITableView = viewModel.makeTableView()
 
     private var viewModel: ChooseCategoriesPointViewModelProtocol
-    
+
     init(viewModel: ChooseCategoriesPointViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         viewModel.viewDidLoad()
 
         setupUI()
         setupConstraints()
         bind()
      }
-        
-    
-    
+
+
+
     private func bind() { }
 
     private func setupUI() {
         view.backgroundColor = .appWhite //FIXME: - другой цвет
-        
+
         view.addSubview(contentView)
-        
+
         contentView.addSubview(welcomLabel)
         contentView.addSubview(cancelButton)
+        contentView.addSubview(openEditPointModuleButton)
         contentView.addSubview(saveButton)
         contentView.addSubview(newCategoriesButton)
-        contentView.addSubview(infoView)
-
-        infoView.addSubview(tableView)
+        contentView.addSubview(tableView)
     }
 
     private func setupConstraints() {
         contentView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
-        
+
         //in contentView
         welcomLabel.snp.makeConstraints { make in
             make.centerX.equalTo(contentView.snp.centerX)
@@ -112,26 +120,25 @@ final class ChooseCategoriesPointVC: UIViewController {
             make.centerY.equalTo(welcomLabel.snp.centerY)
             make.left.equalToSuperview().inset(16)
         }
+        openEditPointModuleButton.snp.makeConstraints { make in
+            make.centerY.equalTo(welcomLabel.snp.centerY)
+            make.right.equalToSuperview().inset(16)
+        }
+        
         newCategoriesButton.snp.makeConstraints { make in
             make.top.equalTo(welcomLabel.snp.bottom).inset(-16.0)
             make.horizontalEdges.equalToSuperview().inset(32.0)
             make.height.equalTo(40.0)
         }
-        infoView.snp.makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
-            make.top.equalTo(newCategoriesButton.snp.bottom).inset(-8.0)
+            make.top.equalTo(newCategoriesButton.snp.bottom)//.inset(-8.0)
             make.bottom.equalTo(saveButton.snp.top).inset(-8.0)
         }
         saveButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(8.0)
             make.height.equalTo(40.0)
             make.horizontalEdges.equalToSuperview().inset(32.0)
-        }
-        
-        //in infoView
-        tableView.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview()
-            make.horizontalEdges.equalToSuperview()
         }
 
     }
@@ -140,17 +147,37 @@ final class ChooseCategoriesPointVC: UIViewController {
 
 
 extension ChooseCategoriesPointVC {
-    
+
     @objc func newCategoriesDidTap(sender: UIView) {
         viewModel.openEditCategoriesPoint()
     }
-    
+
     @objc func cancelDidTap(sender: UIView) {
         viewModel.dismissDidTap()
     }
-    
+
+    @objc func openEditPointModuleButtonDidTap(sender: UIView) {
+        
+    }
+
     @objc func saveDidTap(sender: UIView) {
         viewModel.saveDidTap()
     }
+}
+
+extension ChooseCategoriesPointVC: SourcePointCollectionViewDelegate {
+    func sourcePointCollectionView(_ filterView: SourcePointCollectionView,
+                                didSelect type: String
+    ) {
+        //filterDidSelect?(type)
+     }
+}
+
+extension ChooseCategoriesPointVC: ForestPointCollectionViewDelegate {
+    func forestPointCollectionView(_ filterView: ForestPointCollectionView,
+                                   didSelect type: String
+    ) {
+        //filterDidSelect?(type)
+     }
 }
 

@@ -39,7 +39,6 @@ final class ChooseCategoriesPointAssembler {
         return .init { request in
             request.predicate = .CategoriesPoint.all
             request.sortDescriptors = [
-                .CategoriesPoint.byPredefined,
                 .CategoriesPoint.byDate,
                 .CategoriesPoint.byIsDisabled,
                 .CategoriesPoint.byName

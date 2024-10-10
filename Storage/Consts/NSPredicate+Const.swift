@@ -68,7 +68,7 @@ public extension NSPredicate {
             
             return NSCompoundPredicate(andPredicateWithSubpredicates: predicate)
         }
-
+        
         
         
         
@@ -119,7 +119,7 @@ public extension NSPredicate {
         }
         
     }
-
+    
     enum CategoriesPoint {
         
         public static var all: NSPredicate {
@@ -141,5 +141,74 @@ public extension NSPredicate {
         }
         
     }
-
+    
+    enum SourcePoint {
+        
+        public static var all: NSPredicate {
+            let uuidKeypath = #keyPath(SourcePointMO.uuid)
+            return .init(format: "NOT \(uuidKeypath) == NULL")
+        }
+        
+        public static func source(byUuid uuid: String) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(SourcePointMO.uuid))"
+            return .init(format: "\(uuidKeypath) CONTAINS[cd] %@", uuid)
+        }
+        
+        public static func sources(in uuids: [String]) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(SourcePointMO.uuid))"
+            return NSCompoundPredicate(andPredicateWithSubpredicates: [
+                .init(format: "\(uuidKeypath) IN %@", uuids),
+                all
+            ])
+        }
+        
+    }
+    
+    enum PPSource {
+        
+        public static var all: NSPredicate {
+            let uuidPointKeypath = "\(#keyPath(PPSourceMO.uuidPoint))"
+            let uuidSourceKeypath = "\(#keyPath(PPSourceMO.uuidSource))"
+            return NSCompoundPredicate(andPredicateWithSubpredicates: [
+                .init(format: "NOT \(uuidPointKeypath) == NULL", uuidPointKeypath),
+                .init(format: "NOT \(uuidSourceKeypath) == NULL", uuidSourceKeypath)
+            ])
+        }
+        
+        public static func byPoints(in uuids: [String]) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(PPSourceMO.uuidPoint))"
+            let predicate: [NSPredicate] = [
+                .init(format: "\(uuidKeypath) IN %@", uuids),
+                all
+            ]
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicate)
+        }
+        
+        public static func point(byUuidPoin uuidPoint: String,
+                                 byUuidSource uuidSource: String) -> NSPredicate {
+            let uuidPointKeypath = "\(#keyPath(PPSourceMO.uuidPoint))"
+            let uuidSourceKeypath = "\(#keyPath(PPSourceMO.uuidSource))"
+            return NSCompoundPredicate(andPredicateWithSubpredicates: [
+                .init(format: "\(uuidPointKeypath) CONTAINS[cd] %@", uuidPoint),
+                .init(format: "\(uuidSourceKeypath) CONTAINS[cd] %@", uuidSource)
+            ])
+        }
+        
+        public static func sources(byUuidPoin uuid: String) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(PPSourceMO.uuidPoint))"
+            let predicate: [NSPredicate] = [
+                .init(format: "\(uuidKeypath) CONTAINS[cd] %@", uuid)
+            ]
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicate)
+        }
+        
+        public static func points(byUuidSource uuid: String) -> NSPredicate {
+            let uuidKeypath = "\(#keyPath(PPSourceMO.uuidSource))"
+            let predicate: [NSPredicate] = [
+                .init(format: "\(uuidKeypath) CONTAINS[cd] %@", uuid)
+            ]
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicate)
+        }
+    }
+    
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23B74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="CategoriesPointMO" representedClassName=".CategoriesPointMO" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -7,7 +7,6 @@
         <attribute name="icon" optional="YES" attributeType="String"/>
         <attribute name="isDisabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="predefined" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String"/>
     </entity>
     <entity name="PlanPointMO" representedClassName=".PlanPointMO" syncable="YES">
@@ -31,5 +30,14 @@
         <attribute name="isUsed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="uuidCategory" optional="YES" attributeType="String"/>
         <attribute name="uuidPoint" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PPSourceMO" representedClassName=".PPSourceMO" syncable="YES">
+        <attribute name="uuidPoint" optional="YES" attributeType="String"/>
+        <attribute name="uuidSource" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SourcePointMO" representedClassName=".SourcePointMO" syncable="YES">
+        <attribute name="descr" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
     </entity>
 </model>
